@@ -18,7 +18,7 @@ public final class SOCContext extends SlingContextImpl implements TestRule {
      * Initialize Sling context with default resource resolver type:
      * {@link ResourceResolverType#RESOURCERESOLVER_MOCK}.
      */
-    SOCContext() {
+    public SOCContext() {
         this(new ContextPlugins(), null);
     }
 

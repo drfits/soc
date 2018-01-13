@@ -1,0 +1,7 @@
+<div data-sly-use.field="com.drfits.soc.foundation.area.dialog.fields.OptionField"
+     class="form-group">
+    <label>${properties['label']}:</label>
+    <select class="form-control available-components" data-sly-list="${field.options}">
+        <option data-sly-attribute.value="${item.resourceType}">${item.title}</option>
+    </select>
+</div>

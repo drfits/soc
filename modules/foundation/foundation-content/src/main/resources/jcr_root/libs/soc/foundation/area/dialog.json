@@ -1,0 +1,18 @@
+{
+  "jcr:primaryType": "soc:Component",
+  "sling:resourceSuperType": "soc/foundation/dialog",
+  "saveReload": "CONTAINER",
+  "jcr:title": "Add component",
+  "btnSave": "Add",
+  "btnCancel": "Cancel",
+  "content": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "soc/foundation/dialog/fields/container",
+    "formTitle": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "soc/foundation/area/dlgfields/option",
+      "label": "Available components",
+      "name": "./component"
+    }
+  }
+}

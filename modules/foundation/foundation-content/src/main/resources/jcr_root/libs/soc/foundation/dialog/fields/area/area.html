@@ -1,0 +1,8 @@
+<div data-sly-use.component="com.drfits.soc.foundation.components.foundation.dialog.fields.AreaField"
+     class="form-group">
+    <label class="control-label">${properties['label']}:</label>
+    <textarea type="${properties['type'] || 'text'}"
+           class="form-control"
+           name="${properties['name']}"
+           rows="${properties['rows'] || 5}">${component.value}</textarea>
+</div>

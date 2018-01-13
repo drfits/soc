@@ -1,0 +1,14 @@
+<!--/* http://getbootstrap.com/javascript/#modals-examples */-->
+<div data-sly-use.dialog="com.drfits.soc.foundation.models.DialogConfiguration"
+     class="modal soc-component-edit-modal" tabindex="-1" role="dialog"
+     data-dlg-config-reload="${dialog.saveReload}">
+    <div class="modal-dialog" role="document" aria-hidden="true">
+        <div class="modal-content">
+            <form method="post" enctype="multipart/form-data" action="${request.requestPathInfo.suffix}">
+                <sly data-sly-include="header.html"></sly>
+                <sly data-sly-include="body.html"></sly>
+                <sly data-sly-include="footer.html"></sly>
+            </form>
+        </div>
+    </div>
+</div>

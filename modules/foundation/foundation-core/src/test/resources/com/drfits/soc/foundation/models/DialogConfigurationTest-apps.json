@@ -1,0 +1,94 @@
+{
+  "dialog-reload-none": {
+    "jcr:primaryType": "soc:Component",
+    "sling:resourceSuperType": "soc/foundation/dialog",
+    "jcr:title": "Login form configuration",
+    "btnSave": "Save changes",
+    "btnCancel": "Cancel",
+    "content": {
+      "jcr:primaryType": "oak:Unstructured",
+      "sling:resourceType": "soc/foundation/dialog/fields/container",
+      "formTitle": {
+        "jcr:primaryType": "oak:Unstructured",
+        "sling:resourceType": "soc/foundation/dialog/fields/input",
+        "label": "Form title",
+        "name": "./formTitle"
+      },
+      "nameLabel": {
+        "jcr:primaryType": "oak:Unstructured",
+        "sling:resourceType": "soc/foundation/dialog/fields/input",
+        "label": "Name label",
+        "name": "./userNameLabel"
+      },
+      "passwordLabel": {
+        "jcr:primaryType": "oak:Unstructured",
+        "sling:resourceType": "soc/foundation/dialog/fields/input",
+        "label": "Password label",
+        "type": "text",
+        "name": "./passwordLabel"
+      }
+    }
+  },
+  "dialog-reload-container": {
+    "jcr:primaryType": "soc:Component",
+    "sling:resourceSuperType": "soc/foundation/dialog",
+    "saveReload": "container",
+    "jcr:title": "Login form configuration",
+    "btnSave": "Save changes",
+    "btnCancel": "Cancel",
+    "content": {
+      "jcr:primaryType": "oak:Unstructured",
+      "sling:resourceType": "soc/foundation/dialog/fields/container",
+      "formTitle": {
+        "jcr:primaryType": "oak:Unstructured",
+        "sling:resourceType": "soc/foundation/dialog/fields/input",
+        "label": "Form title",
+        "name": "./formTitle"
+      },
+      "nameLabel": {
+        "jcr:primaryType": "oak:Unstructured",
+        "sling:resourceType": "soc/foundation/dialog/fields/input",
+        "label": "Name label",
+        "name": "./userNameLabel"
+      },
+      "passwordLabel": {
+        "jcr:primaryType": "oak:Unstructured",
+        "sling:resourceType": "soc/foundation/dialog/fields/input",
+        "label": "Password label",
+        "type": "text",
+        "name": "./passwordLabel"
+      }
+    }
+  },
+  "dialog-reload-page": {
+    "jcr:primaryType": "soc:Component",
+    "sling:resourceSuperType": "soc/foundation/dialog",
+    "saveReload": "page",
+    "jcr:title": "Login form configuration",
+    "btnSave": "Save changes",
+    "btnCancel": "Cancel",
+    "content": {
+      "jcr:primaryType": "oak:Unstructured",
+      "sling:resourceType": "soc/foundation/dialog/fields/container",
+      "formTitle": {
+        "jcr:primaryType": "oak:Unstructured",
+        "sling:resourceType": "soc/foundation/dialog/fields/input",
+        "label": "Form title",
+        "name": "./formTitle"
+      },
+      "nameLabel": {
+        "jcr:primaryType": "oak:Unstructured",
+        "sling:resourceType": "soc/foundation/dialog/fields/input",
+        "label": "Name label",
+        "name": "./userNameLabel"
+      },
+      "passwordLabel": {
+        "jcr:primaryType": "oak:Unstructured",
+        "sling:resourceType": "soc/foundation/dialog/fields/input",
+        "label": "Password label",
+        "type": "text",
+        "name": "./passwordLabel"
+      }
+    }
+  }
+}
