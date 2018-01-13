@@ -1,0 +1,9 @@
+<sly data-sly-use.component="com.drfits.soc.foundation.models.PageComponentModel">
+    <sly data-sly-test="${component.startMarker}">
+        <!--${component.startMarker @ context='scriptComment'}-->
+    </sly>
+    <sly data-sly-resource="${currentNode.path @ selectors=component.childSelector}"></sly>
+    <sly data-sly-test="${component.endMarker}">
+        <!--${component.endMarker @ context='scriptComment'}-->
+    </sly>
+</sly>

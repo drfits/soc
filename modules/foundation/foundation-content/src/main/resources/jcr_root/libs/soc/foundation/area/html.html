@@ -1,0 +1,11 @@
+<sly data-sly-use.area="com.drfits.soc.foundation.models.PageAreaModel">
+    <sly data-sly-test="${area.startMarker}">
+        <!--${area.startMarker @ context='scriptComment'}-->
+    </sly>
+    <sly data-sly-list="${area.children}">
+        <sly data-sly-resource="${item.path}"/>
+    </sly>
+    <sly data-sly-test="${area.endMarker}">
+        <!--${area.endMarker @ context='scriptComment'}-->
+    </sly>
+</sly>

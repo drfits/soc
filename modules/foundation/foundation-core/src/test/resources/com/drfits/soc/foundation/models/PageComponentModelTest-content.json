@@ -1,0 +1,29 @@
+{
+  "test-page": {
+    "jcr:primaryType": "soc:Page",
+    "jcr:content": {
+      "jcr:primaryType": "soc:PageContent",
+      "sling:resourceType": "soc/foundation/page",
+      "jcr:title": "Login",
+      "mainContent": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "soc/foundation/area",
+        "title-text": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "test-project/components/title-component"
+        },
+        "login": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "test-project/components/test-component",
+          "formTitle": "apps.admin.components.login.FormTitle",
+          "passwordLabel": "Password",
+          "userNameLabel": "Name"
+        },
+        "footer-text": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "test-project/components/footer-component"
+        }
+      }
+    }
+  }
+}

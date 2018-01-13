@@ -1,0 +1,53 @@
+{
+  "test-project": {
+    "components": {
+      "test-component": {
+        "jcr:primaryType": "soc:Component",
+        "sling:resourceSuperType": "soc/foundation/component",
+        "jcr:title": "Login Panel",
+        "jcr:description": "Description: Login Panel for test",
+        "allowedParents": [
+          "(/.*)?mainContent",
+          "(/.*)?adminContent"
+        ],
+        "componentGroup": "administration components",
+        "dialog": {
+          "jcr:primaryType": "soc:Component",
+          "sling:resourceSuperType": "soc/foundation/dialog",
+          "saveReload": "CONTAINER",
+          "jcr:title": "Login form configuration",
+          "btnSave": "Save changes",
+          "btnCancel": "Cancel",
+          "content": {
+            "jcr:primaryType": "oak:Unstructured",
+            "sling:resourceType": "soc/foundation/dialog/fields/container",
+            "formTitle": {
+              "jcr:primaryType": "oak:Unstructured",
+              "sling:resourceType": "soc/foundation/dialog/fields/input",
+              "label": "Form title",
+              "name": "./formTitle"
+            },
+            "nameLabel": {
+              "jcr:primaryType": "oak:Unstructured",
+              "sling:resourceType": "soc/foundation/dialog/fields/input",
+              "label": "Name label",
+              "name": "./userNameLabel"
+            },
+            "passwordLabel": {
+              "jcr:primaryType": "oak:Unstructured",
+              "sling:resourceType": "soc/foundation/dialog/fields/input",
+              "label": "Password label",
+              "type": "text",
+              "name": "./passwordLabel"
+            }
+          }
+        }
+      },
+      "component-without-dialog": {
+        "jcr:primaryType": "soc:Component",
+        "sling:resourceSuperType": "soc/foundation/component",
+        "jcr:title": "Login Panel"
+      }
+    }
+  }
+}

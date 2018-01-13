@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>foundation</artifactId>
+        <groupId>com.drfits.soc.foundation</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <name>SOC Foundation Content</name>
+    <description>UI for Sling Open CMS</description>
+
+    <artifactId>foundation-content</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <packaging>bundle</packaging>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <configuration>
+                    <instructions>
+                        <!-- Stop bnd complaining about unused Private-Package instructions -->
+                        <Private-Package></Private-Package>
+                        <Sling-Nodetypes>SLING-INF/nodetypes/nodetypes.cnd</Sling-Nodetypes>
+                        <Sling-Initial-Content>
+                            jcr_root/libs/soc/components;overwrite:=false;uninstall:=true;path:=/libs/soc/components,
+                            jcr_root/libs/soc/foundation;overwrite:=true;uninstall:=true;path:=/libs/soc/foundation,
+                            jcr_root/libs/soc/pages;overwrite:=false;uninstall:=true;path:=/libs/soc/pages,
+                            jcr_root/oak_index;overwrite:=false;uninstall:=true;path:=/oak:index
+                        </Sling-Initial-Content>
+                    </instructions>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>maven-sling-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>

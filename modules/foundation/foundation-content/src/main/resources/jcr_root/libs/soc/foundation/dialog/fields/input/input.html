@@ -1,0 +1,8 @@
+<div data-sly-use.component="com.drfits.soc.foundation.components.foundation.dialog.fields.InputField"
+     class="form-group">
+    <label class="control-label">${properties['label']}:</label>
+    <input type="${properties['type'] || 'text'}"
+           class="form-control"
+           name="${properties['name']}"
+           value="${component.value}">
+</div>
