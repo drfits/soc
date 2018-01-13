@@ -1,0 +1,49 @@
+[feature name=soc]
+[variables]
+    soc.version=1.0.0-SNAPSHOT
+
+[:repoinit]
+    # Init core service users and theirs ACLs
+    # more explanation https://sling.apache.org/documentation/bundles/repository-initialization.html
+
+    create service user soc-components-service-user
+    create service user soc-templates-service-user
+    create service user soc-pages-service-user
+    create service user soc-clientlibs-service-user
+
+    # Added for SOC
+    create path (sling:OrderedFolder) /published
+    # path for client-lib files
+    create path (sling:OrderedFolder) /etc/clientlibs
+
+    # Added for SOC
+    set ACL for anonymous
+        allow   jcr:read	on /published,/etc/clientlibs
+    end
+
+    set ACL on /libs,/apps
+        allow jcr:read for soc-components-service-user,soc-templates-service-user,soc-clientlibs-service-user
+    end
+
+    set ACL on /content,/published
+        allow jcr:read for soc-pages-service-user,soc-clientlibs-service-user
+    end
+
+    set ACL on /etc/clientlibs
+        allow jcr:read for soc-clientlibs-service-user
+    end
+
+[artifacts startLevel=20]
+    com.drfits.soc.foundation/foundation-core/1.0.0-SNAPSHOT
+    com.drfits.soc.foundation/foundation-content/1.0.0-SNAPSHOT
+
+[configurations]
+  org.apache.sling.commons.log.LogManager.factory.config-soc.log
+      org.apache.sling.commons.log.pattern="%msg%n"
+      org.apache.sling.commons.log.names=["com.drfits.soc.foundation"]
+      org.apache.sling.commons.log.file="logs/soc-foundation.log"
+      org.apache.sling.commons.log.level="info"
+      org.apache.sling.commons.log.file.size="'.'yyyy-MM-dd"
+      org.apache.sling.commons.log.file.number=I"7"
+
+
