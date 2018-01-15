@@ -39,16 +39,16 @@ public final class SOCContext extends SlingContextImpl implements TestRule {
         this.delegate = new ExternalResource() {
             @Override
             protected void before() {
-                com.drfits.soc.test.core.SOCContext.this.plugins.executeBeforeSetUpCallback(SOCContext.this);
+                SOCContext.this.plugins.executeBeforeSetUpCallback(SOCContext.this);
                 SOCContext.this.setUp();
-                com.drfits.soc.test.core.SOCContext.this.plugins.executeAfterSetUpCallback(SOCContext.this);
+                SOCContext.this.plugins.executeAfterSetUpCallback(SOCContext.this);
             }
 
             @Override
             protected void after() {
-                com.drfits.soc.test.core.SOCContext.this.plugins.executeBeforeTearDownCallback(SOCContext.this);
+                SOCContext.this.plugins.executeBeforeTearDownCallback(SOCContext.this);
                 SOCContext.this.tearDown();
-                com.drfits.soc.test.core.SOCContext.this.plugins.executeAfterTearDownCallback(SOCContext.this);
+                SOCContext.this.plugins.executeAfterTearDownCallback(SOCContext.this);
             }
         };
     }

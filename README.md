@@ -24,6 +24,10 @@ This project is attempt to create CMS for Java developers. Core principles are:
 
 Code style is default for Intelligence IDEA and stored within ```config/soc.xml```. To import it please read the [documentation](https://www.jetbrains.com/help/idea/code-style.html).
 
+### Development
+
+Maven profile for development - ```soc-modules-development```.
+
 ## Build and run
 
 1. To create CMS installer:

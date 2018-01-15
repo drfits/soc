@@ -5,13 +5,10 @@ branches:
   only:
     - master
     - develop
-env:
-  matrix:
-    - SOC_BUILD_PROFILE=soc-modules
 script:
-  - "mvn clean install -P ${SOC_BUILD_PROFILE}"
-  - "mvn test -P ${SOC_BUILD_PROFILE}"
-  - "mvn cobertura:cobertura -P ${SOC_BUILD_PROFILE}"
+  - "mvn clean install"
+  - "mvn test"
+  - "mvn cobertura:cobertura"
 cache:
   directories:
   - "$HOME/.m2"
