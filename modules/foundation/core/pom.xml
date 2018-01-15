@@ -4,8 +4,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
+        <groupId>com.drfits.soc.modules.foundation</groupId>
         <artifactId>foundation</artifactId>
-        <groupId>com.drfits.soc.foundation</groupId>
         <version>1.0.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
@@ -13,7 +13,7 @@
     <name>SOC Foundation Core</name>
     <description>Core classes for Sling Open CMS</description>
 
-    <artifactId>foundation-core</artifactId>
+    <artifactId>core</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <packaging>bundle</packaging>
@@ -171,8 +171,8 @@
         </dependency>
         <!-- Test -->
         <dependency>
-            <groupId>com.drfits.soc.core</groupId>
-            <artifactId>soc-core-test</artifactId>
+            <groupId>com.drfits.soc.modules.common</groupId>
+            <artifactId>test</artifactId>
         </dependency>
         <dependency>
             <groupId>junit</groupId>

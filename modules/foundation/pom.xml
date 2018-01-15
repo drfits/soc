@@ -4,21 +4,22 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.drfits.soc</groupId>
-        <artifactId>soc-modules</artifactId>
+        <groupId>com.drfits.soc.modules</groupId>
+        <artifactId>modules</artifactId>
         <version>1.0.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <name>SOC Foundation</name>
-    <groupId>com.drfits.soc.foundation</groupId>
+
+    <groupId>com.drfits.soc.modules.foundation</groupId>
     <artifactId>foundation</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
-        <module>foundation-core</module>
-        <module>foundation-content</module>
+        <module>core</module>
+        <module>content</module>
     </modules>
 
 </project>
