@@ -10,7 +10,7 @@
     "sling:resourceType": "soc/foundation/dialog/fields/container",
     "formTitle": {
       "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "soc/foundation/area/dlgfields/option",
+      "sling:resourceType": "soc/foundation/area/fields/option",
       "label": "Available components",
       "name": "./component"
     }
