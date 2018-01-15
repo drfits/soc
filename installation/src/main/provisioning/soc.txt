@@ -34,14 +34,14 @@
     end
 
 [artifacts startLevel=20]
-    com.drfits.soc.foundation/foundation-core/1.0.0-SNAPSHOT
-    com.drfits.soc.foundation/foundation-content/1.0.0-SNAPSHOT
+    com.drfits.soc.modules.foundation/core/1.0.0-SNAPSHOT
+    com.drfits.soc.modules.foundation/content/1.0.0-SNAPSHOT
 
 [configurations]
   org.apache.sling.commons.log.LogManager.factory.config-soc.log
       org.apache.sling.commons.log.pattern="%msg%n"
-      org.apache.sling.commons.log.names=["com.drfits.soc.foundation"]
-      org.apache.sling.commons.log.file="logs/soc-foundation.log"
+      org.apache.sling.commons.log.names=["com.drfits.soc.modules.foundation"]
+      org.apache.sling.commons.log.file="logs/modules/foundation.log"
       org.apache.sling.commons.log.level="info"
       org.apache.sling.commons.log.file.size="'.'yyyy-MM-dd"
       org.apache.sling.commons.log.file.number=I"7"
