@@ -352,6 +352,7 @@
                         <formats>
                             <format>xml</format>
                         </formats>
+                        <check/>
                         <maxmem>256m</maxmem>
                         <aggregate>true</aggregate>
                     </configuration>
