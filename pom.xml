@@ -20,6 +20,15 @@
 
     <name>Sling Open CMS</name>
     <description>CMS for Java developers</description>
+
+    <licenses>
+        <license>
+            <name>Apache-2.0</name>
+            <url>https://opensource.org/licenses/Apache-2.0</url>
+            <distribution>manual</distribution>
+        </license>
+    </licenses>
+
     <developers>
         <developer>
             <name>Evgeniy Fitsner</name>
@@ -28,6 +37,12 @@
             <timezone>GMT+3</timezone>
         </developer>
     </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/drfits/soc.git</connection>
+        <developerConnection>scm:git:git://github.com/drfits/soc.git</developerConnection>
+        <url>https://github.com/drfits/soc</url>
+    </scm>
 
     <properties>
         <sling.scheme>http</sling.scheme>
@@ -432,9 +447,6 @@
         </profile>
         <profile>
             <id>soc-modules-development</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
             <modules>
                 <module>modules</module>
             </modules>
