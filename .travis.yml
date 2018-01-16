@@ -6,11 +6,7 @@ branches:
     - master
     - develop
 script:
-  - "mvn clean install"
-  - "mvn test"
-  - "mvn cobertura:cobertura"
+  - "mvn -DrepoToken=$COVERALLS_TOKEN clean install cobertura:cobertura coveralls:report"
 cache:
   directories:
   - "$HOME/.m2"
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
