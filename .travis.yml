@@ -6,7 +6,7 @@ branches:
     - master
     - develop
 script:
-  - "mvn -DrepoToken=$COVERALLS_TOKEN clean install cobertura:cobertura coveralls:report"
+  - "mvn cobertura:cobertura coveralls:report clean install -DrepoToken=$COVERALLS_TOKEN"
 cache:
   directories:
   - "$HOME/.m2"
