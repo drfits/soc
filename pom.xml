@@ -9,10 +9,6 @@
         <version>32</version>
     </parent>
 
-    <prerequisites>
-        <maven>3.5.0</maven>
-    </prerequisites>
-
     <groupId>com.drfits.soc</groupId>
     <artifactId>sling-open-cms</artifactId>
     <version>1.0.0-SNAPSHOT</version>
@@ -20,6 +16,15 @@
 
     <name>Sling Open CMS</name>
     <description>CMS for Java developers</description>
+
+    <licenses>
+        <license>
+            <name>Apache-2.0</name>
+            <url>https://opensource.org/licenses/Apache-2.0</url>
+            <distribution>manual</distribution>
+        </license>
+    </licenses>
+
     <developers>
         <developer>
             <name>Evgeniy Fitsner</name>
@@ -28,6 +33,12 @@
             <timezone>GMT+3</timezone>
         </developer>
     </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/drfits/soc.git</connection>
+        <developerConnection>scm:git:git://github.com/drfits/soc.git</developerConnection>
+        <url>https://github.com/drfits/soc</url>
+    </scm>
 
     <properties>
         <sling.scheme>http</sling.scheme>
@@ -335,10 +346,10 @@
                     <version>2.7</version>
                     <configuration>
                         <formats>
-                            <format>html</format>
                             <format>xml</format>
                         </formats>
                         <check/>
+                        <maxmem>256m</maxmem>
                         <aggregate>true</aggregate>
                     </configuration>
                     <executions>
@@ -350,6 +361,11 @@
                             </goals>
                         </execution>
                     </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.eluder.coveralls</groupId>
+                    <artifactId>coveralls-maven-plugin</artifactId>
+                    <version>4.3.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.sling</groupId>
@@ -424,6 +440,10 @@
                         <artifactId>cobertura-maven-plugin</artifactId>
                     </plugin>
                     <plugin>
+                        <groupId>org.eluder.coveralls</groupId>
+                        <artifactId>coveralls-maven-plugin</artifactId>
+                    </plugin>
+                    <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>
                     </plugin>
@@ -432,9 +452,6 @@
         </profile>
         <profile>
             <id>soc-modules-development</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
             <modules>
                 <module>modules</module>
             </modules>

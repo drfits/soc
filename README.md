@@ -2,9 +2,9 @@
 
 License: [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-Master branch: [![Build Status](https://travis-ci.org/drfits/soc.svg?branch=master)](https://travis-ci.org/drfits/soc) | [![Code Coverage](https://codecov.io/gh/drfits/soc/branch/master/graph/badge.svg)](https://codecov.io/gh/drfits/soc)
+Master branch: [![Build Status](https://travis-ci.org/drfits/soc.svg?branch=master)](https://travis-ci.org/drfits/soc) | [![Coverage Status](https://coveralls.io/repos/github/drfits/soc/badge.svg?branch=master)](https://coveralls.io/github/drfits/soc?branch=master)
 
-Develop branch: [![Build Status](https://travis-ci.org/drfits/soc.svg?branch=develop)](https://travis-ci.org/drfits/soc) | [![Code Coverage](https://codecov.io/gh/drfits/soc/branch/develop/graph/badge.svg)](https://codecov.io/gh/drfits/soc)
+Develop branch: [![Build Status](https://travis-ci.org/drfits/soc.svg?branch=develop)](https://travis-ci.org/drfits/soc) | [![Coverage Status](https://coveralls.io/repos/github/drfits/soc/badge.svg?branch=develop)](https://coveralls.io/github/drfits/soc?branch=develop)
 
 This project is attempt to create CMS for Java developers. Core principles are:
 
