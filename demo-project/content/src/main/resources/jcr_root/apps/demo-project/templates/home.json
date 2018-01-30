@@ -1,8 +1,14 @@
 {
-  "jcr:primaryType": "soc:Page",
+  "jcr:primaryType": "soc:Template",
+  "jcr:title": "Home page",
+  "jcr:description": "Blog home page template",
+  "allowedPaths": [
+    "/content/.*"
+  ],
   "jcr:content": {
     "jcr:primaryType": "soc:PageContent",
     "sling:resourceType": "demo-project/pages/home",
+    "jcr:title": "Home Page",
     "copyright": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "demo-project/components/copyright",
