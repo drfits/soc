@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Default header for development -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.theme.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.structure.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <!-- Import required scripts -->
+    <!-- End of import required scripts -->
+    <script type="module" src="/published/js/main.js"></script>
+    <title>Test editor.html UI new</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand" href="#">Sling Open CMS</a>
+    <!-- Links -->
+    <ul class="navbar-nav">
+        <!-- Dropdown -->
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle page-actions-drop" href="#" data-toggle="dropdown">
+                Page actions
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item page-actions-properties" href="#">Page properties</a>
+                <a class="dropdown-item page-actions-activate" href="#">Activate</a>
+                <a class="dropdown-item page-actions-deactivate" href="#">Deactivate</a>
+            </div>
+        </li>
+
+        <!-- Dropdown -->
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle page-layouts-drop" href="#" data-toggle="dropdown">
+                Layouts
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item page-layouts-editor" href="#">Editor</a>
+                <a class="dropdown-item page-layouts-preview" href="#">Preview</a>
+            </div>
+        </li>
+    </ul>
+</nav>
+
+<div class="container-fluid">
+    <!-- Shadows panel for edit page components -->
+    <div class="soc-shadows-panel">
+        <div id="soc-component-toolbar" class="soc-component-toolbar"></div>
+    </div>
+    <!-- Original site view -->
+    <iframe
+            class="soc-page-mirror"
+            src="/content/demo-project/index.html"
+            scrolling="no"
+            frameborder="0"
+            marginheight="0"
+            marginwidth="0"
+    ></iframe>
+    <!-- Edit dialog - where dialog will be loaded  -->
+    <div class="soc-shadow-dialog-form"></div>
+</div>
+</body>
+</html>
