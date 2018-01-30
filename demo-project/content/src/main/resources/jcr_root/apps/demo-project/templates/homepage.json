@@ -1,0 +1,13 @@
+{
+  "jcr:primaryType": "soc:Template",
+  "jcr:title": "Home page",
+  "jcr:description": "Blog home page",
+  "allowedPaths": [
+    "/content/.*"
+  ],
+  "jcr:content": {
+    "jcr:primaryType": "soc:PageContent",
+    "sling:resourceType": "demo-project/pages/homepage",
+    "jcr:title": "Admin Dashboard"
+  }
+}

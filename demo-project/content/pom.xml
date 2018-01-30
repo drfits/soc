@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.drfits.soc.demo-project</groupId>
+        <artifactId>demo-project-reactor</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <name>SOC Demo Project Content</name>
+    <description>Contains components, areas, templates of SOC Demo application</description>
+
+    <artifactId>demo-content</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <packaging>bundle</packaging>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <configuration>
+                    <instructions>
+                        <Sling-Initial-Content>
+                            jcr_root/apps/demo-project;overwrite:=true;uninstall:=true;path:=/apps/demo-project,
+                            jcr_root/content/demo-project;overwrite:=true;uninstall:=true;path:=/content/demo-project
+                        </Sling-Initial-Content>
+                    </instructions>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>maven-sling-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>

@@ -454,6 +454,7 @@
             <id>soc-modules-development</id>
             <modules>
                 <module>modules</module>
+                <module>demo-project</module>
             </modules>
         </profile>
         <profile>
