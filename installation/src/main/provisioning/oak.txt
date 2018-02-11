@@ -81,9 +81,14 @@
     userPrivilegeNames=["jcr:all"]
     groupPrivilegeNames=["jcr:read"]
 
+# [SOC]: Separate nodes store
 [configurations runModes=oak_tar]
   org.apache.jackrabbit.oak.segment.SegmentNodeStoreService
-    name="Default\ NodeStore"
+    name="Separated\ NodeStore"
+    customBlobStore=B"true"
+
+  org.apache.jackrabbit.oak.plugins.blob.datastore.FileDataStore
+    path="sling/repository/datastore"
 
 [configurations runModes=oak_mongo]
   org.apache.jackrabbit.oak.plugins.document.DocumentNodeStoreService

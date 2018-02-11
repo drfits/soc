@@ -45,5 +45,3 @@
       org.apache.sling.commons.log.level="info"
       org.apache.sling.commons.log.file.size="'.'yyyy-MM-dd"
       org.apache.sling.commons.log.file.number=I"7"
-
-

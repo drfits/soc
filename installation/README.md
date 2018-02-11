@@ -16,4 +16,9 @@ Project provide ability to create installation module of SOC.
 
 For compile process configuration, customization or update please read [Apache Sling Provisioning] documentation first.
 
+## Changes
+
+As initial implementation Sling provisioning was taken. All changed places have to be marked like ```[SOC]:```
+which allow to distinguish changes more easily.
+
 [Apache Sling Provisioning]:https://sling.apache.org/documentation/development/slingstart.html
