@@ -1,0 +1,7 @@
+{
+  "jcr:primaryType": "soc:Page",
+  "jcr:content": {
+    "jcr:primaryType": "soc:PageContent",
+    "sling:resourceType": "soc/editorial/tools/editor"
+  }
+}

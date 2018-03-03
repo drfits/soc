@@ -28,7 +28,7 @@
                         <!-- Stop bnd complaining about unused Private-Package instructions -->
                         <Private-Package></Private-Package>
                         <Sling-Initial-Content>
-                            jcr_root/libs/soc/editorial;overwrite:=true;uninstall:=false;path:=/libs/soc/editorial
+                            jcr_root/libs/soc/editorial;overwrite:=true;uninstall:=true;path:=/libs/soc/editorial
                         </Sling-Initial-Content>
                     </instructions>
                 </configuration>

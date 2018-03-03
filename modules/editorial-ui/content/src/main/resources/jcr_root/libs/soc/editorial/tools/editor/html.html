@@ -19,11 +19,11 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="/libs/soc/editorial/tools/editor/css/main.css">
 
     <!-- Import required scripts -->
     <!-- End of import required scripts -->
-    <script type="module" src="/published/js/main.js"></script>
+    <script type="module" data-sly-attribute.src="/libs/soc/editorial/tools/editor/js/main.js"></script>
     <title>Test editor.html UI new</title>
 </head>
 <body>
@@ -65,7 +65,7 @@
     <!-- Original site view -->
     <iframe
             class="soc-page-mirror"
-            src="/content/demo-project/index.html"
+            data-sly-attribute.src="${request.requestPathInfo.suffix}"
             scrolling="no"
             frameborder="0"
             marginheight="0"
