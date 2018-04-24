@@ -1,0 +1,8 @@
+{
+  "jcr:primaryType": "soc:Component",
+  "sling:resourceSuperType": "soc/foundation/component",
+  "jcr:title": "Heading",
+  "allowedParents": [
+    "(/.*)?area"
+  ]
+}

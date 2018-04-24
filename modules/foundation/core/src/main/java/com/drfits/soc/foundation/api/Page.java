@@ -10,6 +10,11 @@ import java.util.Locale;
  */
 public interface Page {
 
+    /**
+     * Page resource type
+     */
+    String PAGE_RESOURCE_TYPE = "soc:Page";
+
     String getTitle();
 
     Locale getLocale();
@@ -24,5 +29,12 @@ public interface Page {
 
     boolean isVisible();
 
-    Resource getResource();
+    Resource getContentResource();
+
+    /**
+     * Get path of the page.
+     *
+     * @return path of this page.
+     */
+    String getPath();
 }

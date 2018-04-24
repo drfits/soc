@@ -1,9 +1,5 @@
 package com.drfits.soc.foundation.util;
 
-import javax.jcr.RepositoryException;
-import javax.jcr.Session;
-import javax.jcr.Workspace;
-
 import com.drfits.soc.foundation.api.Page;
 import com.drfits.soc.foundation.api.PageManager;
 import com.drfits.soc.foundation.exceptions.SOCException;
@@ -13,6 +9,10 @@ import org.apache.sling.api.resource.*;
 import org.osgi.service.component.annotations.Component;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import javax.jcr.RepositoryException;
+import javax.jcr.Session;
+import javax.jcr.Workspace;
 
 /**
  * Implementation of page management
@@ -60,5 +60,20 @@ public class PageManagerImpl implements PageManager {
     @Override
     public Page move(Resource page, String destination, boolean resolveConflict) throws SOCException {
         throw new UnsupportedOperationException("Method not implemented yet");
+    }
+
+    @Override
+    public Page getContainingPage(final Resource resource) {
+        if (resource == null) {
+            return null;
+        }
+        Resource parent = resource;
+        while (parent != null) {
+            if (Page.PAGE_RESOURCE_TYPE.equals(parent.getResourceType())) {
+                return parent.adaptTo(Page.class);
+            }
+            parent = parent.getParent();
+        }
+        return null;
     }
 }

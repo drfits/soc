@@ -1,8 +1,20 @@
 {
   "jcr:primaryType": "soc:Page",
   "jcr:content": {
+    "jcr:title": "Blog Home Page",
     "jcr:primaryType": "soc:PageContent",
     "sling:resourceType": "demo-project/pages/home",
+    "heading": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "demo-project/components/heading",
+      "heading": "BLOG OF EVGENIY FITSNER",
+      "secondary": "From developer to developers about Adobe CQ/AEM, Apache Sling, Java, Magnolia CMS and other"
+    },
+    "latest-posts": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "demo-project/components/latest-posts",
+      "size": 10
+    },
     "copyright": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "demo-project/components/copyright",

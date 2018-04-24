@@ -19,8 +19,6 @@ public final class GlobalConstants {
     public static final String JCR_TITLE = "jcr:title";
     public static final String JCR_DESCRIPTION = "jcr:description";
 
-    public static final String PAGE_RESOURCE_TYPE = "soc:Page";
-
     private GlobalConstants() {
     }
 }

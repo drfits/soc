@@ -1,18 +1,10 @@
 package com.drfits.soc.foundation.models;
 
-import java.util.Calendar;
-import java.util.Locale;
-import java.util.Optional;
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
-import javax.inject.Named;
-
 import com.drfits.soc.foundation.api.Page;
 import com.drfits.soc.foundation.util.GlobalConstants;
 import org.apache.commons.lang3.LocaleUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.jackrabbit.JcrConstants;
-import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
@@ -21,20 +13,27 @@ import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.annotation.PostConstruct;
+import javax.inject.Inject;
+import javax.inject.Named;
+import java.util.Calendar;
+import java.util.Locale;
+import java.util.Optional;
+
 /**
  * Model class for {@link PageModel#RESOURCE_TYPE} resourceType
  * Created by Evgeniy Fitsner <drfits@drfits.com> on 11/7/16.
  */
 @Model(
-    adaptables = Resource.class,
-    defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL,
-    resourceType = PageModel.RESOURCE_TYPE
+        adaptables = Resource.class,
+        defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL,
+        resourceType = PageModel.RESOURCE_TYPE
 )
 public final class PageModel implements Page {
 
     private static final Logger log = LoggerFactory.getLogger(PageModel.class);
 
-    public static final String RESOURCE_TYPE = "soc/foundation/page";
+    static final String RESOURCE_TYPE = "soc/foundation/page";
 
     @Inject
     @Default(values = "")
@@ -68,18 +67,15 @@ public final class PageModel implements Page {
     @SlingObject
     private Resource resource;
 
-    @SlingObject
-    private SlingHttpServletRequest request;
-
     private Locale locale;
 
     @PostConstruct
     protected void init() {
         log.debug("Page model init");
         locale = Optional.ofNullable(language)
-            .filter(StringUtils::isNotBlank)
-            .map(LocaleUtils::toLocale)
-            .orElse(Locale.getDefault());
+                .filter(StringUtils::isNotBlank)
+                .map(LocaleUtils::toLocale)
+                .orElse(Locale.getDefault());
         log.debug("Page model init finished");
     }
 
@@ -118,8 +114,13 @@ public final class PageModel implements Page {
     }
 
     @Override
-    public Resource getResource() {
+    public Resource getContentResource() {
         return resource;
+    }
+
+    @Override
+    public String getPath() {
+        return getContentResource().getParent().getPath();
     }
 
     @Override

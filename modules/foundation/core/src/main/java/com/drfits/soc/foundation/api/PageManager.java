@@ -28,4 +28,12 @@ public interface PageManager {
      * @return the new page at the new location
      */
     Page move(Resource page, String destination, boolean resolveConflict) throws SOCException;
+
+    /**
+     * Get page to which this resource belongs.
+     *
+     * @param resource for check.
+     * @return page or null if not found or if parameter is null.
+     */
+    Page getContainingPage(Resource resource);
 }

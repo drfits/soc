@@ -1,0 +1,12 @@
+{
+  "jcr:primaryType": "soc:Page",
+  "jcr:content": {
+    "jcr:primaryType": "soc:PageContent",
+    "sling:resourceType": "demo-project/pages/post",
+    "copyright": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "demo-project/components/copyright",
+      "copyright": "Copyright &copy; Sling Open CMS"
+    }
+  }
+}

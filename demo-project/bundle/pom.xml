@@ -20,6 +20,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.drfits.soc.modules.foundation</groupId>
+            <artifactId>core</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
         </dependency>
