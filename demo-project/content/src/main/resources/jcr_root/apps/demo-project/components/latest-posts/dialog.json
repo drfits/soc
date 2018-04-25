@@ -11,8 +11,9 @@
     "number": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "soc/foundation/dialog/fields/input",
+      "type": "number",
       "label": "Display posts",
-      "name": "./length"
+      "name": "./size"
     }
   }
 }

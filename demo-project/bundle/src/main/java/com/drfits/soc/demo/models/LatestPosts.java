@@ -4,12 +4,14 @@ import com.drfits.soc.foundation.api.Page;
 import com.drfits.soc.foundation.api.PageManager;
 import org.apache.jackrabbit.oak.query.SQL2Parser;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.Self;
 
 import javax.annotation.PostConstruct;
+import javax.inject.Inject;
 import javax.jcr.query.Query;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -32,7 +34,11 @@ public final class LatestPosts {
     @OSGiService
     private PageManager pageManager;
 
-    private List<Resource> posts = new ArrayList<>();
+    @Inject
+    @Default(longValues = 10)
+    private Long size;
+
+    private final List<Resource> posts = new ArrayList<>();
 
     @PostConstruct
     protected void init() {
@@ -48,5 +54,9 @@ public final class LatestPosts {
 
     public List<Resource> getPosts() {
         return this.posts;
+    }
+
+    public Long getSize() {
+        return this.size;
     }
 }

@@ -1,6 +1,9 @@
 <sly data-sly-use.posts="com.drfits.soc.demo.models.LatestPosts">
     <p>
-        Posts: ${posts.posts.size}
+        Posts on page: ${properties['size'] || posts.size}
+    </p>
+    <p>
+        Available posts: ${posts.posts.size}
     </p>
 </sly>
 
