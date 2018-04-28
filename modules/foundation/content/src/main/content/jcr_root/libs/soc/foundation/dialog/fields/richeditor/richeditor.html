@@ -1,0 +1,10 @@
+<!--/*
+    * Rich editor for insert
+ */-->
+<div data-sly-use.component="com.drfits.soc.foundation.components.foundation.dialog.fields.RichEditorField"
+     class="form-group">
+    <label class="control-label">${properties['label']}:</label>
+    <textarea
+            class="form-control soc-richedit-summernote"
+            name="${properties['name']}">${component.value}</textarea>
+</div>

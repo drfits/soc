@@ -46,6 +46,7 @@
         <sling.port>8080</sling.port>
         <sling.username>admin</sling.username>
         <sling.password>admin</sling.password>
+        <package.install>/bin/cpm/package.service.html</package.install>
         <sources.encoding>UTF-8</sources.encoding>
         <java.version>8</java.version>
         <sling.animalSignatures.version>${java.version}</sling.animalSignatures.version>
@@ -325,6 +326,30 @@
                         <password>${sling.password}</password>
                     </configuration>
                 </plugin>
+                <plugin>
+                    <!-- For more info https://helpx.adobe.com/experience-manager/6-4/sites/developing/using/vlt-mavenplugin.html -->
+                    <groupId>com.day.jcr.vault</groupId>
+                    <artifactId>content-package-maven-plugin</artifactId>
+                    <version>0.0.24</version>
+                    <executions>
+                        <execution>
+                            <id>install-content-package</id>
+                            <phase>install</phase>
+                            <goals>
+                                <goal>install</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <extensions>true</extensions>
+                    <configuration>
+                        <targetURL>${sling.scheme}://${sling.host}:${sling.port}${package.install}</targetURL>
+                        <failOnError>true</failOnError>
+                        <userId>${sling.username}</userId>
+                        <password>${sling.password}</password>
+                        <useProxy>false</useProxy>
+                        <failOnMissingEmbed>true</failOnMissingEmbed>
+                    </configuration>
+                </plugin>
                 <!-- Skip license check only for development -->
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
@@ -446,6 +471,17 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-surefire-plugin</artifactId>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>installPackage</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.day.jcr.vault</groupId>
+                        <artifactId>content-package-maven-plugin</artifactId>
                     </plugin>
                 </plugins>
             </build>

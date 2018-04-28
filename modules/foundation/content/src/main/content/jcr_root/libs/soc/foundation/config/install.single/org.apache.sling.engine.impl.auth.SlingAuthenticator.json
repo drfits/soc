@@ -1,0 +1,11 @@
+{
+  "jcr:primaryType": "sling:OsgiConfig",
+  "auth.annonymous": false,
+  "sling.auth.requirements": [
+    "/etc/clientlibs/admin",
+    "/",
+    "-/published",
+    "-/bin/browser.html",
+    "-/bin/cpm/package.service.html"
+  ]
+}

@@ -25,6 +25,11 @@
 //	  -	 http://jackrabbit.apache.org/node-type-notation.html
 //
 
+<nt='http://www.jcp.org/jcr/nt/1.0'>
+<mix='http://www.jcp.org/jcr/mix/1.0'>
+<jcr='http://www.jcp.org/jcr/1.0'>
+<sling='http://sling.apache.org/jcr/sling/1.0'>
+<cpp='http://sling.composum.com/pages/1.0'>
 <soc = 'http://www.drfits.com/soc/1.0'>
 
 

@@ -16,30 +16,64 @@
     <artifactId>content</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
-    <packaging>bundle</packaging>
+    <packaging>content-package</packaging>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.drfits.soc.modules.foundation</groupId>
+            <artifactId>core</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/content/jcr_root</directory>
+                <excludes>
+                    <!-- exclude .vlt control files in the package -->
+                    <exclude>**/.vlt</exclude>
+                    <exclude>**/.vltignore</exclude>
+                    <exclude>**/.gitignore</exclude>
+                    <exclude>**/*.iml</exclude>
+                    <exclude>**/.classpath</exclude>
+                    <exclude>**/.project</exclude>
+                    <exclude>**/.settings</exclude>
+                    <exclude>**/.DS_Store</exclude>
+                    <exclude>**/target/**</exclude>
+                    <exclude>**/pom.xml</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>src/main/content/META-INF</directory>
+                <targetPath>../vault-work/META-INF</targetPath>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>maven-bundle-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
                 <configuration>
-                    <instructions>
-                        <!-- Stop bnd complaining about unused Private-Package instructions -->
-                        <Private-Package></Private-Package>
-                        <Sling-Nodetypes>SLING-INF/nodetypes/nodetypes.cnd</Sling-Nodetypes>
-                        <Sling-Initial-Content>
-                            jcr_root/libs/soc/components;overwrite:=true;uninstall:=false;path:=/libs/soc/components,
-                            jcr_root/libs/soc/foundation;overwrite:=true;uninstall:=false;path:=/libs/soc/foundation,
-                            jcr_root/libs/soc/pages;overwrite:=true;uninstall:=false;path:=/libs/soc/pages,
-                            jcr_root/oak_index;overwrite:=true;uninstall:=false;path:=/oak:index
-                        </Sling-Initial-Content>
-                    </instructions>
+                    <includeEmptyDirs>true</includeEmptyDirs>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.sling</groupId>
                 <artifactId>maven-sling-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>com.day.jcr.vault</groupId>
+                <artifactId>content-package-maven-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <group>${project.groupId}</group>
+                    <embeddeds>
+                        <embedded>
+                            <groupId>com.drfits.soc.modules.foundation</groupId>
+                            <artifactId>core</artifactId>
+                            <target>/libs/soc/foundation/install</target>
+                        </embedded>
+                    </embeddeds>
+                </configuration>
             </plugin>
         </plugins>
     </build>

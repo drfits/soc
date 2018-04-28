@@ -1,7 +1,5 @@
 package com.drfits.soc.foundation.models;
 
-import java.util.Locale;
-
 import com.drfits.soc.foundation.api.Page;
 import com.drfits.soc.test.core.SOCContext;
 import com.drfits.soc.test.core.utils.StringToCalendarCompare;
@@ -9,6 +7,8 @@ import org.apache.sling.api.resource.Resource;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+
+import java.util.Locale;
 
 import static org.junit.Assert.*;
 
@@ -54,7 +54,7 @@ public class PageModelTest {
         assertNotNull(model.getModified());
         assertNull(model.getPublished());
         assertFalse(model.isVisible());
-        assertNotNull(model.getResource());
+        assertNotNull(model.getContentResource());
         assertNotNull(model.getLocale());
     }
 
@@ -72,7 +72,7 @@ public class PageModelTest {
         assertNotNull(model.getPublished());
         assertTrue(new StringToCalendarCompare("2017-11-03T13:30:00.000+03:00").same(model.getPublished()));
         assertTrue(model.isVisible());
-        assertNotNull(model.getResource());
+        assertNotNull(model.getContentResource());
         assertEquals(new Locale("ru"), model.getLocale());
     }
 
@@ -88,7 +88,7 @@ public class PageModelTest {
         assertNotNull(model.getPublished());
         assertTrue(new StringToCalendarCompare("2017-11-03T13:30:00.000+03:00").same(model.getPublished()));
         assertTrue(model.isVisible());
-        assertNotNull(model.getResource());
+        assertNotNull(model.getContentResource());
         assertEquals(new Locale("ru"), model.getLocale());
     }
 }
