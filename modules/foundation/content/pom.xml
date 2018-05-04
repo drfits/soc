@@ -24,6 +24,10 @@
             <artifactId>core</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.jackrabbit</groupId>
+            <artifactId>oak-jcr</artifactId>
+        </dependency>
     </dependencies>
     <build>
         <resources>
@@ -63,7 +67,15 @@
             <plugin>
                 <groupId>com.day.jcr.vault</groupId>
                 <artifactId>content-package-maven-plugin</artifactId>
-                <extensions>true</extensions>
+                <executions>
+                    <execution>
+                        <id>install-content-package</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>install</goal>
+                        </goals>
+                    </execution>
+                </executions>
                 <configuration>
                     <group>${project.groupId}</group>
                     <embeddeds>

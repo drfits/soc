@@ -15,6 +15,7 @@
   ~ limitations under the License.
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <workspaceFilter version="1.0">
-  <filter root="/libs/soc/foundation"/>
-  <filter root="/oak:index"/>
+    <filter root="/libs/soc/foundation"/>
+    <filter root="/oak:index/socPageContent"/>
+    <filter root="/oak:index/socTemplate"/>
 </workspaceFilter>

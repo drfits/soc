@@ -330,16 +330,7 @@
                     <!-- For more info https://helpx.adobe.com/experience-manager/6-4/sites/developing/using/vlt-mavenplugin.html -->
                     <groupId>com.day.jcr.vault</groupId>
                     <artifactId>content-package-maven-plugin</artifactId>
-                    <version>0.0.24</version>
-                    <executions>
-                        <execution>
-                            <id>install-content-package</id>
-                            <phase>install</phase>
-                            <goals>
-                                <goal>install</goal>
-                            </goals>
-                        </execution>
-                    </executions>
+                    <version>0.5.24</version>
                     <extensions>true</extensions>
                     <configuration>
                         <targetURL>${sling.scheme}://${sling.host}:${sling.port}${package.install}</targetURL>
