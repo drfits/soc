@@ -1,8 +1,0 @@
-{
-  "jcr:primaryType": "soc:Component",
-  "sling:resourceSuperType": "soc/foundation/component",
-  "jcr:title": "Copyright",
-  "allowedParents": [
-    "(/.*)?area"
-  ]
-}
