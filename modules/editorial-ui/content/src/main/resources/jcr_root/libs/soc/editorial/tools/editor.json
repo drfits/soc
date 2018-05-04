@@ -1,4 +1,0 @@
-{
-  "jcr:primaryType": "soc:Component",
-  "sling:resourceSuperType": "soc/foundation/page"
-}
