@@ -4,6 +4,5 @@
           jcr:primaryType="soc:Page">
     <jcr:content
             jcr:primaryType="soc:PageContent"
-            jcr:title="Ooyala Video Metadata Tool (OIS v2.5)"
             sling:resourceType="soc/editorial/tools/editor"/>
 </jcr:root>
