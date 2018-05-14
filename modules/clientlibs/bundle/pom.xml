@@ -4,14 +4,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.drfits.soc.modules.editorial-ui</groupId>
-        <artifactId>editorial-ui-root</artifactId>
+        <groupId>com.drfits.soc.modules.clientlibs</groupId>
+        <artifactId>clientlibs</artifactId>
         <version>1.0.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <name>SOC Editorial UI Bundle</name>
-    <description>SOC Editorial UI bundle for Sling Open CMS</description>
+    <name>SOC Client Libraries Core</name>
+    <description>Sling Open CMS: client libraries core module</description>
 
     <artifactId>bundle</artifactId>
     <version>1.0.0-SNAPSHOT</version>
@@ -44,8 +44,12 @@
             <artifactId>slf4j-api</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>jsr305</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.apache.sling</groupId>
-            <artifactId>org.apache.sling.settings</artifactId>
+            <artifactId>org.apache.sling.event</artifactId>
         </dependency>
         <dependency>
             <groupId>org.osgi</groupId>
@@ -139,42 +143,11 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.apache.sling</groupId>
-            <artifactId>org.apache.sling.servlets.post</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.sling</groupId>
-            <artifactId>org.apache.sling.serviceusermapper</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.google.code.findbugs</groupId>
-            <artifactId>jsr305</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.sling</groupId>
-            <artifactId>adapter-annotations</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-annotations</artifactId>
-        </dependency>
         <!-- Test -->
-        <dependency>
-            <groupId>com.drfits.soc.modules.common</groupId>
-            <artifactId>test</artifactId>
-        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.sling</groupId>
-            <artifactId>org.apache.sling.testing.sling-mock</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -186,11 +159,11 @@
                 <configuration>
                     <instructions>
                         <Export-Package>
-                            com.drfits.soc.editorial.api.*
+                            com.drfits.soc.clientlibs.api.*,
+                            com.drfits.soc.clientlibs.model.*
                         </Export-Package>
-                        <Sling-Model-Packages>
-                            com.drfits.soc.editorial
-                        </Sling-Model-Packages>
+                        <Private-Package>com.drfits.soc.clientlibs.*</Private-Package>
+                        <Sling-Model-Packages>com.drfits.soc.clientlibs.model</Sling-Model-Packages>
                     </instructions>
                 </configuration>
             </plugin>
@@ -207,4 +180,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>

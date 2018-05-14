@@ -4,24 +4,22 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.drfits.soc</groupId>
-        <artifactId>sling-open-cms</artifactId>
+        <groupId>com.drfits.soc.modules</groupId>
+        <artifactId>modules</artifactId>
         <version>1.0.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <groupId>com.drfits.soc.modules</groupId>
-    <artifactId>modules</artifactId>
+    <name>SOC Client Libraries</name>
 
+    <groupId>com.drfits.soc.modules.clientlibs</groupId>
+    <artifactId>clientlibs</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-
     <packaging>pom</packaging>
 
     <modules>
-        <module>common</module>
-        <module>foundation</module>
-        <module>editorial-ui</module>
-        <module>clientlibs</module>
+        <module>bundle</module>
+        <module>content</module>
     </modules>
 
 </project>

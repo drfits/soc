@@ -1,0 +1,31 @@
+<!--
+Template include logic
+-->
+<template data-sly-template.include="${@ categories='Client Library categories', mode='optional: JS or CSS'}"
+          data-sly-use.clientlib="${'com.drfits.soc.clientlibs.api.ClientLibIncludeObject' @ categories=categories, mode=mode}">
+    ${clientlib.include @ context='unsafe'}
+</template>
+
+<!--
+Template used for including CSS client libraries
+-->
+<template data-sly-template.css="${@ categories='Client Library categories'}">
+    <sly data-sly-test="${request.getResourceResolver}"
+         data-sly-call="${include @ categories=categories, mode='CSS'}"/>
+</template>
+
+<!--
+Template used for including JS client libraries
+-->
+<template data-sly-template.js="${@ categories='Client Library categories'}">
+    <sly data-sly-test="${request.getResourceResolver}"
+         data-sly-call="${include @ categories=categories, mode='JS'}"/>
+</template>
+
+<!--
+Template used for including ALL client libraries
+-->
+<template data-sly-template.all="${@ categories='Client Library categories'}">
+    <sly data-sly-test="${request.getResourceResolver}"
+         data-sly-call="${include @ categories=categories, mode='ALL'}"/>
+</template>
