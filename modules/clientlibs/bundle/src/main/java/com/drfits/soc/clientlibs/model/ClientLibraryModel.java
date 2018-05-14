@@ -1,9 +1,5 @@
 package com.drfits.soc.clientlibs.model;
 
-import java.util.Collections;
-import java.util.List;
-import javax.inject.Inject;
-
 import com.drfits.soc.clientlibs.api.ClientLibrary;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
@@ -11,12 +7,16 @@ import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.Self;
 
+import javax.inject.Inject;
+import java.util.Collections;
+import java.util.List;
+
 /**
  * Created by Evgeniy Fitsner <drfits@drfits.com> on 10/20/16.
  */
 @Model(
-    adaptables = Resource.class,
-    defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
+        adaptables = Resource.class,
+        defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
 )
 public final class ClientLibraryModel implements ClientLibrary {
 

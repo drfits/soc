@@ -1,8 +1,8 @@
 package com.drfits.soc.clientlibs.api;
 
-import javax.annotation.Nonnull;
-
 import com.drfits.soc.clientlibs.impl.ClientLibraryType;
+
+import javax.annotation.Nonnull;
 
 /**
  * Client Manager - manage client libraries for page markup
@@ -17,7 +17,8 @@ public interface ClientLibraryManager {
 
     /**
      * Get library include markup.
-     * @param categories for include
+     *
+     * @param categories  for include
      * @param libraryType for include
      * @return HTML markup string for include within page header
      */
@@ -25,6 +26,7 @@ public interface ClientLibraryManager {
 
     /**
      * Remove from the libraries cache.
+     *
      * @param categories to invalidate
      */
     void invalidate(@Nonnull String[] categories);

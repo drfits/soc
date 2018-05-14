@@ -1,10 +1,5 @@
 package com.drfits.soc.clientlibs.impl;
 
-import java.util.*;
-import java.util.concurrent.TimeUnit;
-import javax.annotation.Nonnull;
-import javax.jcr.query.Query;
-
 import com.drfits.soc.clientlibs.api.ClientLibrary;
 import com.drfits.soc.clientlibs.api.ClientLibraryManager;
 import com.drfits.soc.clientlibs.config.ClientManagerConfig;
@@ -28,6 +23,11 @@ import org.osgi.service.metatype.annotations.Designate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.annotation.Nonnull;
+import javax.jcr.query.Query;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
+
 @Component(immediate = true)
 @Designate(ocd = ClientManagerConfig.class)
 public class ClientLibraryManagerImpl implements ClientLibraryManager {
@@ -41,7 +41,7 @@ public class ClientLibraryManagerImpl implements ClientLibraryManager {
     private String[] libPaths;
 
     private static final Map<String, Object> SERVICE_USER = ImmutableMap.of(
-        ResourceResolverFactory.USER, ClientLibraryServiceUser.NAME
+            ResourceResolverFactory.USER, ClientLibraryServiceUser.NAME
     );
 
     @Reference
@@ -60,9 +60,9 @@ public class ClientLibraryManagerImpl implements ClientLibraryManager {
             sb.append("<link rel=\"stylesheet\" href=\"").append(path).append("\">");
         }
         Optional.of(clientLibrary)
-            .map(ClientLibrary::getExternal)
-            .map(ClientLibraryModel::getCss)
-            .ifPresent(css -> css.forEach(sb::append));
+                .map(ClientLibrary::getExternal)
+                .map(ClientLibraryModel::getCss)
+                .ifPresent(css -> css.forEach(sb::append));
     }
 
     private static void addJsMarkup(StringBuilder sb, ClientLibrary clientLibrary, ResourceResolver resolver) {
@@ -78,9 +78,9 @@ public class ClientLibraryManagerImpl implements ClientLibraryManager {
             sb.append("<script type=\"text/javascript\" src=\"").append(path).append("\"></script>");
         }
         Optional.of(clientLibrary)
-            .map(ClientLibrary::getExternal)
-            .map(ClientLibraryModel::getJs)
-            .ifPresent(js -> js.forEach(sb::append));
+                .map(ClientLibrary::getExternal)
+                .map(ClientLibraryModel::getJs)
+                .ifPresent(js -> js.forEach(sb::append));
     }
 
     @Activate
@@ -90,14 +90,14 @@ public class ClientLibraryManagerImpl implements ClientLibraryManager {
         libPaths = config.paths();
         log.info("[*** ClientLibraryManagerImpl] lib paths: {}", (Object[]) libPaths);
         librariesCache = CacheBuilder.<String, ClientLibrary>newBuilder()
-            .maximumSize(config.cacheSize())
-            .expireAfterWrite(config.expireAfterWrite(), TimeUnit.SECONDS)
-            .build(
-                new CacheLoader<String, ClientLibrary>() {
-                    public ClientLibrary load(@Nonnull String category) throws Exception {
-                        return findClientLibrary(category);
-                    }
-                });
+                .maximumSize(config.cacheSize())
+                .expireAfterWrite(config.expireAfterWrite(), TimeUnit.SECONDS)
+                .build(
+                        new CacheLoader<String, ClientLibrary>() {
+                            public ClientLibrary load(@Nonnull String category) throws Exception {
+                                return findClientLibrary(category);
+                            }
+                        });
     }
 
     @Override
@@ -134,7 +134,7 @@ public class ClientLibraryManagerImpl implements ClientLibraryManager {
         try (ResourceResolver resolver = resolverFactory.getServiceResourceResolver(SERVICE_USER)) {
             for (String path : libPaths) {
                 final String query = Q_FIND_LIBRARY + SQL2Parser.escapeStringLiteral(category) +
-                    " AND ISDESCENDANTNODE(f, " + SQL2Parser.escapeStringLiteral(path) + ")";
+                        " AND ISDESCENDANTNODE(f, " + SQL2Parser.escapeStringLiteral(path) + ")";
                 log.debug("Search query {}", query);
                 final Iterator<Resource> it = resolver.findResources(query, Query.JCR_SQL2);
                 if (it.hasNext()) {
