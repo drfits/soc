@@ -32,38 +32,10 @@
 <cpp = 'http://sling.composum.com/pages/1.0'>
 <soc = 'http://www.drfits.com/soc/1.0'>
 
-
-[soc:Page] > nt:hierarchyNode
- orderable
- + jcr:content (soc:PageContent)      = soc:PageContent copy primary autocreated
- + * (nt:base)      = nt:base version
-
-[soc:PageContent] > nt:unstructured, mix:title, mix:created, mix:language, mix:lastModified, sling:VanityPath, sling:Resource
- - jcr:language (string)
- - jcr:description (string)
- - published (date)
- - visible (boolean)
-
-[soc:Template] > nt:hierarchyNode, mix:title
- + jcr:content (nt:base)           = nt:unstructured
- - allowedParents (string) multiple
- - allowedChildren (string) multiple
- - allowedPaths (string) multiple
- - * (undefined) multiple
- - * (undefined)
- + * (nt:base)           = nt:base multiple version
- + icon (nt:file)
- + thumbnail (nt:file)
-
-[soc:Component] > nt:folder, mix:title, sling:ResourceSuperType
- - * (undefined)
- - * (undefined) multiple
- + * (nt:base)           = nt:base multiple version
- + dialog (nt:base)           = nt:unstructured copy
- - allowedParents (string) multiple
- - componentGroup (string)
-
-[soc:Dialog] > nt:unstructured
- + * (nt:base)           = nt:base version
- - title (string)
- - description (string)
+[soc:ClientLibraryFolder] > sling:Folder
+ - categories (string) multiple
+ - dependencies (string) multiple
+ - baseCssPath (string)
+ - css (string) multiple
+ - baseJsPath (string)
+ - js (string) multiple

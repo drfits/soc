@@ -17,4 +17,5 @@
 <workspaceFilter version="1.0">
     <filter root="/libs/soc/clientlibs"/>
     <filter root="/libs/soc/sightly/templates/clientlib.html"/>
+    <filter root="/oak:index/socClientLibraryFolder"/>
 </workspaceFilter>
