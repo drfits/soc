@@ -1,8 +1,8 @@
 package com.drfits.soc.foundation.api;
 
-import java.util.List;
-
 import org.apache.sling.api.resource.Resource;
+
+import java.util.List;
 
 /**
  * PageAreaModel to place and manage components inside it

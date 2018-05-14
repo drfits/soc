@@ -29,21 +29,21 @@ public class PageComponentModelTest {
     @Test
     public void testForComponentWithDialog() throws Exception {
         PageComponentModel model = context
-            .currentResource("/content/test-page/jcr:content/mainContent/login")
-            .adaptTo(PageComponentModel.class);
+                .currentResource("/content/test-page/jcr:content/mainContent/login")
+                .adaptTo(PageComponentModel.class);
         assertNotNull(model);
         assertNotNull(
-            "soc{" +
-                "\"title\":\"Login Panel\"," +
-                "\"path\":\"/content/test-page/jcr:content/mainContent/login\"," +
-                "\"dlg\":\"/apps/test-project/components/test-component/dialog.html/content/test-page/jcr:content/mainContent/login\"," +
-                "\"res_type\":\"test-project/components/test-component\"" +
-                "}",
-            model.getStartMarker()
+                "soc{" +
+                        "\"title\":\"Login Panel\"," +
+                        "\"path\":\"/content/test-page/jcr:content/mainContent/login\"," +
+                        "\"dlg\":\"/apps/test-project/components/test-component/dialog.html/content/test-page/jcr:content/mainContent/login\"," +
+                        "\"res_type\":\"test-project/components/test-component\"" +
+                        "}",
+                model.getStartMarker()
         );
         assertEquals(
-            "soc{\"path\":\"/content/test-page/jcr:content/mainContent/login\"}",
-            model.getEndMarker()
+                "soc{\"path\":\"/content/test-page/jcr:content/mainContent/login\"}",
+                model.getEndMarker()
         );
         assertEquals("/content/test-page/jcr:content/mainContent/login", model.getPath());
         assertEquals("test-component", model.getChildSelector());
@@ -52,32 +52,32 @@ public class PageComponentModelTest {
     @Test
     public void testForComponentWithoutDialog() throws Exception {
         PageComponentModel model = context
-            .currentResource("/content/test-page/jcr:content/mainContent/title-text")
-            .adaptTo(PageComponentModel.class);
+                .currentResource("/content/test-page/jcr:content/mainContent/title-text")
+                .adaptTo(PageComponentModel.class);
         assertNotNull(model);
         assertEquals(
-            "soc{\"title\":\"Login Panel\",\"path\":\"/content/test-page/jcr:content/mainContent/title-text\",\"type\":\"component\",\"res_type\":\"test-project/components/title-component\"}",
-            model.getStartMarker()
+                "soc{\"title\":\"Login Panel\",\"path\":\"/content/test-page/jcr:content/mainContent/title-text\",\"type\":\"component\",\"res_type\":\"test-project/components/title-component\"}",
+                model.getStartMarker()
         );
         assertEquals(
-            "soc{\"path\":\"/content/test-page/jcr:content/mainContent/title-text\"}",
-            model.getEndMarker()
+                "soc{\"path\":\"/content/test-page/jcr:content/mainContent/title-text\"}",
+                model.getEndMarker()
         );
     }
 
     @Test
     public void testForComponentWithoutDialogAndTitle() throws Exception {
         PageComponentModel model = context
-            .currentResource("/content/test-page/jcr:content/mainContent/footer-text")
-            .adaptTo(PageComponentModel.class);
+                .currentResource("/content/test-page/jcr:content/mainContent/footer-text")
+                .adaptTo(PageComponentModel.class);
         assertNotNull(model);
         assertEquals(
-            "soc{\"title\":\"\",\"path\":\"/content/test-page/jcr:content/mainContent/footer-text\",\"type\":\"component\",\"res_type\":\"test-project/components/footer-component\"}",
-            model.getStartMarker()
+                "soc{\"title\":\"\",\"path\":\"/content/test-page/jcr:content/mainContent/footer-text\",\"type\":\"component\",\"res_type\":\"test-project/components/footer-component\"}",
+                model.getStartMarker()
         );
         assertEquals(
-            "soc{\"path\":\"/content/test-page/jcr:content/mainContent/footer-text\"}",
-            model.getEndMarker()
+                "soc{\"path\":\"/content/test-page/jcr:content/mainContent/footer-text\"}",
+                model.getEndMarker()
         );
     }
 }

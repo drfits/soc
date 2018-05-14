@@ -1,10 +1,5 @@
 package com.drfits.soc.foundation.templates;
 
-import java.util.*;
-import java.util.regex.Pattern;
-import java.util.regex.PatternSyntaxException;
-import javax.jcr.query.Query;
-
 import com.drfits.soc.foundation.api.Template;
 import com.drfits.soc.foundation.api.TemplateManager;
 import com.drfits.soc.foundation.templates.models.TemplateModel;
@@ -19,21 +14,26 @@ import org.osgi.service.component.annotations.Reference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.jcr.query.Query;
+import java.util.*;
+import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
+
 /**
  * Created by Evgeniy Fitsner <drfits@drfits.com> on 12/18/16.
  */
 @Component(
-    immediate = true,
-    service = {
-        TemplateManager.class
-    },
-    reference = {
-        @Reference(
-            name = GlobalConstants.SERVICE_USER_TEMPLATES,
-            target = "(subServiceName=" + GlobalConstants.SERVICE_USER_TEMPLATES + ")",
-            service = ServiceUserMapped.class
-        )
-    }
+        immediate = true,
+        service = {
+                TemplateManager.class
+        },
+        reference = {
+                @Reference(
+                        name = GlobalConstants.SERVICE_USER_TEMPLATES,
+                        target = "(subServiceName=" + GlobalConstants.SERVICE_USER_TEMPLATES + ")",
+                        service = ServiceUserMapped.class
+                )
+        }
 )
 public class TemplateManagerImpl implements TemplateManager {
 
@@ -43,8 +43,8 @@ public class TemplateManagerImpl implements TemplateManager {
     private ResourceResolverFactory resourceFactory;
 
     private static final Map<String, Object> SERVICE_USER = ImmutableMap.of(
-        ResourceResolverFactory.SUBSERVICE,
-        GlobalConstants.SERVICE_USER_TEMPLATES
+            ResourceResolverFactory.SUBSERVICE,
+            GlobalConstants.SERVICE_USER_TEMPLATES
     );
 
     private static final String Q_ALL_TEMPLATES = "SELECT t.* FROM [soc:Template] as t";
@@ -57,9 +57,9 @@ public class TemplateManagerImpl implements TemplateManager {
             Iterator<Resource> resourceIt = resolver.findResources(Q_ALL_TEMPLATES, Query.JCR_SQL2);
             while (resourceIt.hasNext()) {
                 Optional.ofNullable(resourceIt.next())
-                    .map(r -> (Template) r.adaptTo(TemplateModel.class))
-                    .filter(t -> templatePathMatch(t, path))
-                    .ifPresent(templates::add);
+                        .map(r -> (Template) r.adaptTo(TemplateModel.class))
+                        .filter(t -> templatePathMatch(t, path))
+                        .ifPresent(templates::add);
             }
         } catch (Exception e) {
             LOGGER.error(e.getMessage());

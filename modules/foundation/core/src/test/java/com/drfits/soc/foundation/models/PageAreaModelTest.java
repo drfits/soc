@@ -28,13 +28,13 @@ public class PageAreaModelTest {
     @Test
     public void testAreaWithChildren() throws Exception {
         PageAreaModel model = context.currentResource("/content/test-page/jcr:content/mainContent")
-            .adaptTo(PageAreaModel.class);
+                .adaptTo(PageAreaModel.class);
         assertNotNull(model);
         assertNotNull(model.getChildren());
         assertEquals(3, model.getChildren().size());
         assertEquals(
-            "soc{\"path\":\"/content/test-page/jcr:content/mainContent\",\"type\":\"area\",\"res_type\":\"soc/foundation/area\"}",
-            model.getStartMarker()
+                "soc{\"path\":\"/content/test-page/jcr:content/mainContent\",\"type\":\"area\",\"res_type\":\"soc/foundation/area\"}",
+                model.getStartMarker()
         );
         assertEquals("soc{\"path\":\"/content/test-page/jcr:content/mainContent\"}", model.getEndMarker());
     }
@@ -42,13 +42,13 @@ public class PageAreaModelTest {
     @Test
     public void testEmptyArea() throws Exception {
         PageAreaModel model = context.currentResource("/content/test-page/jcr:content/empty-area")
-            .adaptTo(PageAreaModel.class);
+                .adaptTo(PageAreaModel.class);
         assertNotNull(model);
         assertNotNull(model.getChildren());
         assertTrue(model.getChildren().isEmpty());
         assertEquals(
-            "soc{\"path\":\"/content/test-page/jcr:content/empty-area\",\"type\":\"area\",\"res_type\":\"soc/foundation/area\"}",
-            model.getStartMarker()
+                "soc{\"path\":\"/content/test-page/jcr:content/empty-area\",\"type\":\"area\",\"res_type\":\"soc/foundation/area\"}",
+                model.getStartMarker()
         );
         assertEquals("soc{\"path\":\"/content/test-page/jcr:content/empty-area\"}", model.getEndMarker());
     }

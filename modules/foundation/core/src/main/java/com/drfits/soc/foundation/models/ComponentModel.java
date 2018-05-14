@@ -1,9 +1,5 @@
 package com.drfits.soc.foundation.models;
 
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
-import javax.inject.Named;
-
 import com.drfits.soc.foundation.api.Component;
 import com.drfits.soc.foundation.util.GlobalConstants;
 import org.apache.sling.api.resource.Resource;
@@ -13,13 +9,17 @@ import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.annotation.PostConstruct;
+import javax.inject.Inject;
+import javax.inject.Named;
+
 /**
  * Component model represents component definition.
  * Created by Evgeniy Fitsner <drfits@drfits.com> on 11/7/16.
  */
 @Model(
-    adaptables = Resource.class,
-    defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
+        adaptables = Resource.class,
+        defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
 )
 public final class ComponentModel implements Component {
 
@@ -61,6 +61,7 @@ public final class ComponentModel implements Component {
 
     /**
      * Path from which component was instantiated
+     *
      * @return absolute repository path
      */
     public String getPath() {

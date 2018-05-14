@@ -36,7 +36,7 @@
             Defines an aggregate that handles nt:nodeType nodes and serializes
             them into .cnd notation.
         -->
-        <aggregate type="nodetype" title="Node Type Aggregate" />
+        <aggregate type="nodetype" title="Node Type Aggregate"/>
 
         <!--
             Defines an aggregate that defines full coverage for certain node
@@ -44,14 +44,14 @@
         -->
         <aggregate type="full" title="Full Coverage Aggregate">
             <matches>
-                <include nodeType="rep:AccessControl" respectSupertype="true" />
-                <include nodeType="rep:Policy" respectSupertype="true" />
-                <include nodeType="cq:Widget" respectSupertype="true" />
-                <include nodeType="cq:EditConfig" respectSupertype="true" />
-                <include nodeType="cq:WorkflowModel" respectSupertype="true" />
-                <include nodeType="vlt:FullCoverage" respectSupertype="true" />
-                <include nodeType="mix:language" respectSupertype="true" />
-                <include nodeType="sling:OsgiConfig" respectSupertype="true" />
+                <include nodeType="rep:AccessControl" respectSupertype="true"/>
+                <include nodeType="rep:Policy" respectSupertype="true"/>
+                <include nodeType="cq:Widget" respectSupertype="true"/>
+                <include nodeType="cq:EditConfig" respectSupertype="true"/>
+                <include nodeType="cq:WorkflowModel" respectSupertype="true"/>
+                <include nodeType="vlt:FullCoverage" respectSupertype="true"/>
+                <include nodeType="mix:language" respectSupertype="true"/>
+                <include nodeType="sling:OsgiConfig" respectSupertype="true"/>
             </matches>
         </aggregate>
 
@@ -60,10 +60,10 @@
         -->
         <aggregate type="generic" title="Folder Aggregate">
             <matches>
-                <include nodeType="nt:folder" respectSupertype="true" />
+                <include nodeType="nt:folder" respectSupertype="true"/>
             </matches>
             <contains>
-                <exclude isNode="true" />
+                <exclude isNode="true"/>
             </contains>
         </aggregate>
 
@@ -75,7 +75,7 @@
                 <!-- all -->
             </matches>
             <contains>
-                <exclude nodeType="nt:hierarchyNode" respectSupertype="true" />
+                <exclude nodeType="nt:hierarchyNode" respectSupertype="true"/>
             </contains>
         </aggregate>
 

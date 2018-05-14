@@ -25,18 +25,18 @@
 //	  -	 http://jackrabbit.apache.org/node-type-notation.html
 //
 
-<nt='http://www.jcp.org/jcr/nt/1.0'>
-<mix='http://www.jcp.org/jcr/mix/1.0'>
-<jcr='http://www.jcp.org/jcr/1.0'>
-<sling='http://sling.apache.org/jcr/sling/1.0'>
-<cpp='http://sling.composum.com/pages/1.0'>
-<soc='http://www.drfits.com/soc/1.0'>
+<nt = 'http://www.jcp.org/jcr/nt/1.0'>
+<mix = 'http://www.jcp.org/jcr/mix/1.0'>
+<jcr = 'http://www.jcp.org/jcr/1.0'>
+<sling = 'http://sling.apache.org/jcr/sling/1.0'>
+<cpp = 'http://sling.composum.com/pages/1.0'>
+<soc = 'http://www.drfits.com/soc/1.0'>
 
 
 [soc:Page] > nt:hierarchyNode
  orderable
- + jcr:content (soc:PageContent)     = soc:PageContent copy primary autocreated
- + * (nt:base)     = nt:base version
+ + jcr:content (soc:PageContent)      = soc:PageContent copy primary autocreated
+ + * (nt:base)      = nt:base version
 
 [soc:PageContent] > nt:unstructured, mix:title, mix:created, mix:language, mix:lastModified, sling:VanityPath, sling:Resource
  - jcr:language (string)
@@ -45,21 +45,21 @@
  - visible (boolean)
 
 [soc:Template] > nt:hierarchyNode, mix:title
- + jcr:content (nt:base)          = nt:unstructured
+ + jcr:content (nt:base)           = nt:unstructured
  - allowedParents (string) multiple
  - allowedChildren (string) multiple
  - allowedPaths (string) multiple
  - * (undefined) multiple
  - * (undefined)
- + * (nt:base)          = nt:base multiple version
+ + * (nt:base)           = nt:base multiple version
  + icon (nt:file)
  + thumbnail (nt:file)
 
 [soc:Component] > nt:folder, mix:title, sling:ResourceSuperType
  - * (undefined)
  - * (undefined) multiple
- + * (nt:base)          = nt:base multiple version
- + dialog (nt:base)          = nt:unstructured copy
+ + * (nt:base)           = nt:base multiple version
+ + dialog (nt:base)           = nt:unstructured copy
  - allowedParents (string) multiple
  - componentGroup (string)
 
@@ -72,6 +72,6 @@
  - js (string) multiple
 
 [soc:Dialog] > nt:unstructured
- + * (nt:base)          = nt:base version
+ + * (nt:base)           = nt:base version
  - title (string)
  - description (string)

@@ -1,8 +1,0 @@
-{
-  "jcr:primaryType": "sling:OsgiConfig",
-  "whitelist.name": "SOC foundation content install",
-  "whitelist.bundles": [
-    "foundation-core",
-    "clientlibs-core"
-  ]
-}

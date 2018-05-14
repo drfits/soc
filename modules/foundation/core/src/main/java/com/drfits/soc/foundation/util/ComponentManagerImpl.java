@@ -1,16 +1,9 @@
 package com.drfits.soc.foundation.util;
 
-import java.util.*;
-import java.util.regex.Pattern;
-import java.util.regex.PatternSyntaxException;
-import javax.jcr.query.Query;
-
 import com.drfits.soc.foundation.api.Component;
 import com.drfits.soc.foundation.api.ComponentManager;
 import com.drfits.soc.foundation.models.ComponentModel;
 import com.google.common.collect.ImmutableMap;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.jackrabbit.JcrConstants;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ResourceResolverFactory;
@@ -19,21 +12,26 @@ import org.osgi.service.component.annotations.Reference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.jcr.query.Query;
+import java.util.*;
+import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
+
 /**
  * Created by Evgeniy Fitsner <drfits@drfits.com> on 12/18/16.
  */
 @org.osgi.service.component.annotations.Component(
-    immediate = true,
-    service = {
-        ComponentManager.class
-    },
-    reference = {
-        @Reference(
-            name = GlobalConstants.SERVICE_USER_TEMPLATES,
-            target = "(subServiceName=" + GlobalConstants.SERVICE_USER_TEMPLATES + ")",
-            service = ServiceUserMapped.class
-        )
-    }
+        immediate = true,
+        service = {
+                ComponentManager.class
+        },
+        reference = {
+                @Reference(
+                        name = GlobalConstants.SERVICE_USER_TEMPLATES,
+                        target = "(subServiceName=" + GlobalConstants.SERVICE_USER_TEMPLATES + ")",
+                        service = ServiceUserMapped.class
+                )
+        }
 )
 public class ComponentManagerImpl implements ComponentManager {
 
@@ -43,8 +41,8 @@ public class ComponentManagerImpl implements ComponentManager {
     private ResourceResolverFactory resourceFactory;
 
     private static final Map<String, Object> SERVICE_USER = ImmutableMap.of(
-        ResourceResolverFactory.SUBSERVICE,
-        GlobalConstants.SERVICE_USER_TEMPLATES
+            ResourceResolverFactory.SUBSERVICE,
+            GlobalConstants.SERVICE_USER_TEMPLATES
     );
 
     private static final String Q_ALL_COMPONENTS = "SELECT c.* FROM [soc:Component] as c";
@@ -57,10 +55,10 @@ public class ComponentManagerImpl implements ComponentManager {
             Iterator<Resource> resourceIt = resolver.findResources(Q_ALL_COMPONENTS, Query.JCR_SQL2);
             while (resourceIt.hasNext()) {
                 Optional.ofNullable(resourceIt.next())
-                    .map(r -> (Component) r.adaptTo(ComponentModel.class))
-                    .filter(t -> Objects.nonNull(t.getTitle()))
-                    .filter(t -> parentPathMatch(t, path))
-                    .ifPresent(components::add);
+                        .map(r -> (Component) r.adaptTo(ComponentModel.class))
+                        .filter(t -> Objects.nonNull(t.getTitle()))
+                        .filter(t -> parentPathMatch(t, path))
+                        .ifPresent(components::add);
             }
         } catch (Exception e) {
             LOGGER.error(e.getMessage());

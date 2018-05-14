@@ -1,11 +1,5 @@
 package com.drfits.soc.foundation.sightly;
 
-import java.net.URI;
-import java.net.URISyntaxException;
-import javax.jcr.RepositoryException;
-import javax.jcr.Session;
-import javax.script.Bindings;
-
 import com.drfits.soc.foundation.util.GlobalConstants;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.jackrabbit.api.JackrabbitSession;
@@ -23,9 +17,16 @@ import org.apache.sling.scripting.sightly.pojo.Use;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.jcr.RepositoryException;
+import javax.jcr.Session;
+import javax.script.Bindings;
+import java.net.URI;
+import java.net.URISyntaxException;
+
 /**
  * More information about available objects: <a href="https://sling.apache.org/documentation/bundles/scripting/scripting-htl.html#global-objects">here</a>
  * <br/>
+ *
  * @deprecated Please use Sling Models instead
  * Created by evgeniy_fitsner on 10/19/16.
  */
@@ -44,6 +45,7 @@ public class WCMUse implements Use {
 
     /**
      * Sightly component initialization.
+     *
      * @param bindings The current execution context.
      */
     @Override
@@ -61,6 +63,7 @@ public class WCMUse implements Use {
 
     /**
      * Get the current resource.
+     *
      * @return The current resource.
      */
     public Resource getResource() {
@@ -69,6 +72,7 @@ public class WCMUse implements Use {
 
     /**
      * Get the resource resolver backed by the current resource.
+     *
      * @return The current resource resolver.
      */
     public ResourceResolver getResourceResolver() {
@@ -77,6 +81,7 @@ public class WCMUse implements Use {
 
     /**
      * Get the current resource properties.
+     *
      * @return The current resource properties.
      */
     public ValueMap getProperties() {
@@ -85,6 +90,7 @@ public class WCMUse implements Use {
 
     /**
      * Get the current Sling Script Helper.
+     *
      * @return The current Sling Script Helper.
      */
     public SlingScriptHelper getSlingScriptHelper() {
@@ -93,6 +99,7 @@ public class WCMUse implements Use {
 
     /**
      * Get the current request.
+     *
      * @return The current Sling HTTP Servlet Request.
      */
     public SlingHttpServletRequest getRequest() {
@@ -101,6 +108,7 @@ public class WCMUse implements Use {
 
     /**
      * Get the current response.
+     *
      * @return The current Sling HTTP Servlet Response.
      */
     public SlingHttpServletResponse getResponse() {
@@ -109,6 +117,7 @@ public class WCMUse implements Use {
 
     /**
      * Get the current JCR session.
+     *
      * @return The current JCR session.
      */
     public Session getSession() {
@@ -118,6 +127,7 @@ public class WCMUse implements Use {
     /**
      * Get the authorable status of the current user.
      * TODO: remove and use UserService
+     *
      * @return true if the current user is an admin or author.
      */
     public boolean isAuthorable() {
@@ -140,6 +150,7 @@ public class WCMUse implements Use {
 
     /**
      * Generate the absolute resource path from the relative path.
+     *
      * @return The absolute blog post display path.
      */
     public String getAbsolutePath(final String relativePath) {
@@ -157,7 +168,7 @@ public class WCMUse implements Use {
                 newRelativePath = StringUtils.removeEnd(newRelativePath, "/");
 
                 displayPath = new URI(uri.getScheme(), uri.getUserInfo(), uri.getHost(),
-                    uri.getPort(), newRelativePath, uri.getQuery(), uri.getFragment()
+                        uri.getPort(), newRelativePath, uri.getQuery(), uri.getFragment()
                 ).toString();
             } catch (URISyntaxException e) {
                 LOGGER.error("Could not get create absolute path from Request URL", e);

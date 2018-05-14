@@ -40,11 +40,11 @@
           }
         }
       },
-      "footer-component":{
+      "footer-component": {
         "jcr:primaryType": "soc:Component",
         "sling:resourceSuperType": "soc/foundation/component"
       },
-      "title-component":{
+      "title-component": {
         "jcr:primaryType": "soc:Component",
         "sling:resourceSuperType": "soc/foundation/component",
         "jcr:title": "Login Panel"

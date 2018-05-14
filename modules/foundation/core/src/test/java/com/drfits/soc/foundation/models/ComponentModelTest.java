@@ -1,12 +1,12 @@
 package com.drfits.soc.foundation.models;
 
-import java.util.Objects;
-
 import com.drfits.soc.test.core.SOCContext;
 import org.apache.sling.api.resource.Resource;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+
+import java.util.Objects;
 
 import static org.junit.Assert.*;
 
@@ -37,8 +37,8 @@ public class ComponentModelTest {
         assertEquals("Description: Login Panel for test", model.getDescription());
         assertEquals("administration components", model.getComponentGroup());
         assertTrue(Objects.deepEquals(
-            model.getAllowedParents(),
-            new String[]{ "(/.*)?mainContent", "(/.*)?adminContent" }
+                model.getAllowedParents(),
+                new String[]{"(/.*)?mainContent", "(/.*)?adminContent"}
         ));
     }
 

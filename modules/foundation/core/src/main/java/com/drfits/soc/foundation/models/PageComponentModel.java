@@ -1,10 +1,5 @@
 package com.drfits.soc.foundation.models;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
-
 import com.drfits.soc.foundation.util.GlobalConstants;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -19,14 +14,19 @@ import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import javax.annotation.PostConstruct;
+import javax.inject.Inject;
+
 /**
  * Wrapper of component resource which should be rendered within requested soc:Page resource.
  * Main purpose of this class - to provide additional layer for extra-conditions and allow to control components markup
  * Created by Evgeniy Fitsner <drfits@drfits.com> on 11/7/16.
  */
 @Model(
-    adaptables = Resource.class,
-    defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
+        adaptables = Resource.class,
+        defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
 )
 public class PageComponentModel {
 
@@ -75,18 +75,18 @@ public class PageComponentModel {
                 }
             }
             startMarker = START_OBJECT_MARKER + OBJECT_MAPPER.writeValueAsString(
-                new PageComponentModel.StartMarker(
-                    title,
-                    resource.getPath(),
-                    dlg,
-                    resource.getResourceType(),
-                    getComponentType()
-                )
+                    new PageComponentModel.StartMarker(
+                            title,
+                            resource.getPath(),
+                            dlg,
+                            resource.getResourceType(),
+                            getComponentType()
+                    )
             );
             endMarker = START_OBJECT_MARKER + OBJECT_MAPPER.writeValueAsString(
-                new PageComponentModel.EndMarker(
-                    resource.getPath()
-                )
+                    new PageComponentModel.EndMarker(
+                            resource.getPath()
+                    )
             );
         } catch (JsonProcessingException e) {
             LOGGER.error("Unable to create marker object", e);
@@ -95,6 +95,7 @@ public class PageComponentModel {
 
     /**
      * Find component associated with this resource
+     *
      * @param resource for which wi should find component
      * @return component resource if exists
      */
@@ -134,11 +135,11 @@ public class PageComponentModel {
         private final String type;
 
         StartMarker(
-            @Nullable final String title,
-            @Nullable final String path,
-            @Nullable final String dlg,
-            @Nullable final String resourceType,
-            @Nullable final String type
+                @Nullable final String title,
+                @Nullable final String path,
+                @Nullable final String dlg,
+                @Nullable final String resourceType,
+                @Nullable final String type
         ) {
             this.title = title;
             this.path = path;

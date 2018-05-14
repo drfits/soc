@@ -1,11 +1,11 @@
 package com.drfits.soc.foundation.models;
 
-import javax.inject.Inject;
-
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
+
+import javax.inject.Inject;
 
 /**
  * Created by Evgeniy Fitsner <drfits@drfits.com> on 11/20/16.
