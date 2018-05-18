@@ -13,7 +13,7 @@
     <name>SOC Foundation Bundle</name>
     <description>Core classes for Sling Open CMS</description>
 
-    <artifactId>soc-foundation-bundle</artifactId>
+    <artifactId>bundle</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <packaging>bundle</packaging>

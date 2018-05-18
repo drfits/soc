@@ -21,7 +21,7 @@
     <dependencies>
         <dependency>
             <groupId>com.drfits.soc.modules.foundation</groupId>
-            <artifactId>soc-foundation-bundle</artifactId>
+            <artifactId>bundle</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>
@@ -78,10 +78,15 @@
                 </executions>
                 <configuration>
                     <group>${project.groupId}</group>
+                    <properties>
+                        <!-- More info: http://jackrabbit.apache.org/filevault-package-maven-plugin-archives/1.0.2-SNAPSHOT/package-mojo.html-->
+                        <acHandling>merge_preserve</acHandling>
+                        <allowIndexDefinitions>true</allowIndexDefinitions>
+                    </properties>
                     <embeddeds>
                         <embedded>
                             <groupId>com.drfits.soc.modules.foundation</groupId>
-                            <artifactId>soc-foundation-bundle</artifactId>
+                            <artifactId>bundle</artifactId>
                             <target>/libs/soc/foundation/install</target>
                         </embedded>
                     </embeddeds>
