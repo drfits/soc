@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          jcr:primaryType="soc:ClientLibraryFolder"
+          categories="bootstrap-4.1.0"
+>
+    <external
+            jcr:primaryType="oak:Unstructured"
+            css="[&lt;link rel=&quot;stylesheet&quot; href=&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css&quot; integrity=&quot;sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4&quot; crossorigin=&quot;anonymous&quot;&gt;]"
+            js="[&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js&quot; integrity=&quot;sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;,&lt;script src=&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js&quot; integrity=&quot;sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;]"
+    />
+</jcr:root>

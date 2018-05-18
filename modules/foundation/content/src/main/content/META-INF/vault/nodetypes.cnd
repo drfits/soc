@@ -67,3 +67,11 @@
  + * (nt:base)           = nt:base version
  - title (string)
  - description (string)
+
+[soc:ClientLibraryFolder] > sling:Folder
+ - categories (string) multiple
+ - dependencies (string) multiple
+ - baseCssPath (string)
+ - css (string) multiple
+ - baseJsPath (string)
+ - js (string) multiple

@@ -10,10 +10,10 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <name>SOC Foundation Core</name>
+    <name>SOC Foundation Bundle</name>
     <description>Core classes for Sling Open CMS</description>
 
-    <artifactId>core</artifactId>
+    <artifactId>soc-foundation-bundle</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <packaging>bundle</packaging>
@@ -185,6 +185,7 @@
                 <artifactId>maven-bundle-plugin</artifactId>
                 <configuration>
                     <instructions>
+                        <Bundle-SymbolicName>${groupId}.${artifactId}</Bundle-SymbolicName>
                         <Export-Package>
                             com.drfits.soc.foundation.api.*,
                             com.drfits.soc.foundation.models.*,
@@ -192,12 +193,15 @@
                             com.drfits.soc.foundation.components.*,
                             com.drfits.soc.foundation.exceptions.*,
                             com.drfits.soc.foundation.sightly.*,
-                            com.drfits.soc.foundation.util.*
+                            com.drfits.soc.foundation.util.*,
+                            com.drfits.soc.clientlibs.api.*,
+                            com.drfits.soc.clientlibs.model.*
                         </Export-Package>
                         <Sling-Model-Packages>
                             com.drfits.soc.foundation.models,
                             com.drfits.soc.foundation.components.models,
-                            com.drfits.soc.foundation.templates.models
+                            com.drfits.soc.foundation.templates.models,
+                            com.drfits.soc.clientlibs.model
                         </Sling-Model-Packages>
                         <Bundle-Activator>com.drfits.soc.Activator</Bundle-Activator>
                     </instructions>

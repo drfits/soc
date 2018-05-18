@@ -10,7 +10,7 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <name>SOC Client Libraries Core</name>
+    <name>SOC Client Libraries Bundle</name>
     <description>Sling Open CMS: client libraries core module</description>
 
     <artifactId>bundle</artifactId>
@@ -158,6 +158,7 @@
                 <artifactId>maven-bundle-plugin</artifactId>
                 <configuration>
                     <instructions>
+                        <Bundle-SymbolicName>${groupId}.${artifactId}</Bundle-SymbolicName>
                         <Export-Package>
                             com.drfits.soc.clientlibs.api.*,
                             com.drfits.soc.clientlibs.model.*

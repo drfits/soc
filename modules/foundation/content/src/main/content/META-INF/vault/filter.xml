@@ -16,6 +16,12 @@
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <workspaceFilter version="1.0">
     <filter root="/libs/soc/foundation"/>
+    <filter root="/libs/soc/public/login"/>
+    <filter root="/libs/soc/clientlibs"/>
+    <filter root="/libs/soc/sightly/templates/clientlib.html"/>
+
+    <!-- Indexes -->
     <filter root="/oak:index/socPageContent"/>
     <filter root="/oak:index/socTemplate"/>
+    <filter root="/oak:index/socClientLibraryFolder"/>
 </workspaceFilter>
