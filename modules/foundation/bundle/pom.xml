@@ -194,14 +194,13 @@
                             com.drfits.soc.foundation.exceptions.*,
                             com.drfits.soc.foundation.sightly.*,
                             com.drfits.soc.foundation.util.*,
-                            com.drfits.soc.clientlibs.api.*,
-                            com.drfits.soc.clientlibs.model.*
+                            com.drfits.soc.pub.login.*
                         </Export-Package>
                         <Sling-Model-Packages>
                             com.drfits.soc.foundation.models,
                             com.drfits.soc.foundation.components.models,
                             com.drfits.soc.foundation.templates.models,
-                            com.drfits.soc.clientlibs.model
+                            com.drfits.soc.pub.login
                         </Sling-Model-Packages>
                         <Bundle-Activator>com.drfits.soc.Activator</Bundle-Activator>
                     </instructions>

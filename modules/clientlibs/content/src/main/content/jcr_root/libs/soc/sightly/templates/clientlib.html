@@ -2,7 +2,7 @@
 Template include logic
 -->
 <template data-sly-template.include="${@ categories='Client Library categories', mode='optional: JS or CSS'}">
-    <sly data-sly-use.clientlib="${'com.drfits.soc.clientlibs.model.ClientLibIncludeObject' @ categories=categories, mode=mode}">
+    <sly data-sly-use.clientlib="${'com.drfits.soc.clientlibs.api.ClientLibIncludeObject' @ categories=categories, mode=mode}">
         ${clientlib.include @ context='unsafe'}
     </sly>
 </template>

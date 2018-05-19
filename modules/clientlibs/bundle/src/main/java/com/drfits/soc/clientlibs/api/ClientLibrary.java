@@ -1,7 +1,5 @@
 package com.drfits.soc.clientlibs.api;
 
-import com.drfits.soc.clientlibs.model.ClientLibraryModel;
-
 import java.io.Serializable;
 import java.util.List;
 
@@ -25,39 +23,9 @@ public interface ClientLibrary extends Serializable {
     List<String> getCategories();
 
     /**
-     * Path to folder where CSS files locates
+     * Client library items (Ex.: CSS and JS files).
      *
-     * @return category name without start "/".<br/>
-     * Ex.: cssFilesFolder/version1
+     * @return list of entries.
      */
-    String getBaseCssPath();
-
-    /**
-     * CSS file names which client library includes. Names should be relative to baseCssPath without start "/"
-     *
-     * @return list of file names
-     */
-    List<String> getCss();
-
-    /**
-     * Path to folder where JS files locates
-     *
-     * @return category name without start "/".<br/>
-     * Ex.: jsFilesFolder/version1
-     */
-    String getBaseJsPath();
-
-    /**
-     * JS file names which client library includes. Names should be relative to baseJsPath without start "/"
-     *
-     * @return list of file names
-     */
-    List<String> getJs();
-
-    /**
-     * Provide list of external dependencies (ust for CDN or other static files delivery networks).
-     *
-     * @return {@link ClientLibraryModel} object which contains list of ready to use within html markup code fragments
-     */
-    ClientLibraryModel getExternal();
+    List<ClientLibraryItem> getItems();
 }

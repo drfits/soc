@@ -17,7 +17,6 @@
 <workspaceFilter version="1.0">
     <filter root="/libs/soc/foundation"/>
     <filter root="/libs/soc/public/login"/>
-    <filter root="/libs/soc/clientlibs"/>
 
     <!-- Indexes -->
     <filter root="/oak:index/socPageContent"/>

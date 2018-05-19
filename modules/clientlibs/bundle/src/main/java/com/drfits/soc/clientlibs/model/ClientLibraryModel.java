@@ -1,15 +1,20 @@
 package com.drfits.soc.clientlibs.model;
 
 import com.drfits.soc.clientlibs.api.ClientLibrary;
+import com.drfits.soc.clientlibs.api.ClientLibraryItem;
 import org.apache.sling.api.resource.Resource;
-import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.Self;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import javax.annotation.Nonnull;
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by Evgeniy Fitsner <drfits@drfits.com> on 10/20/16.
@@ -20,65 +25,52 @@ import java.util.List;
 )
 public final class ClientLibraryModel implements ClientLibrary {
 
-    @Inject
-    private List<String> categories = Collections.emptyList();
+    private static final Logger LOG = LoggerFactory.getLogger(ClientLibraryModel.class);
+
+    private final String path;
 
     @Inject
-    @Default(values = "")
-    private String baseCssPath;
+    private final List<String> categories = Collections.emptyList();
 
     @Inject
-    private List<String> css = Collections.emptyList();
+    private final List<ClientLibraryItem> items = Collections.emptyList();
 
     @Inject
-    @Default(values = "")
-    private String baseJsPath;
+    public ClientLibraryModel(@Nonnull @Self final Resource resource) {
+        this.path = resource.getPath();
+        LOG.debug("Construct ClientLibraryModel for {}", this.path);
+    }
 
-    @Inject
-    private List<String> js = Collections.emptyList();
-
-    @Inject
-    private ClientLibraryModel external;
-
-    private String path;
-
-    @Inject
-    public ClientLibraryModel(@Self Resource resource) {
-        path = resource.getPath();
+    @PostConstruct
+    protected void init() {
+        LOG.debug("Init ClientLibraryModel");
     }
 
     @Override
     public List<String> getCategories() {
-        return categories;
-    }
-
-    @Override
-    public String getBaseCssPath() {
-        return baseCssPath;
-    }
-
-    @Override
-    public List<String> getCss() {
-        return css;
-    }
-
-    @Override
-    public String getBaseJsPath() {
-        return baseJsPath;
-    }
-
-    @Override
-    public List<String> getJs() {
-        return js;
+        return this.categories;
     }
 
     @Override
     public String getPath() {
-        return path;
+        return this.path;
     }
 
     @Override
-    public ClientLibraryModel getExternal() {
-        return external;
+    public List<ClientLibraryItem> getItems() {
+        return this.items;
+    }
+
+    @Override
+    public boolean equals(final Object o) {
+        if (this == o) return true;
+        if (o == null || this.getClass() != o.getClass()) return false;
+        final ClientLibraryModel that = (ClientLibraryModel) o;
+        return Objects.equals(this.getPath(), that.getPath());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.getPath());
     }
 }
