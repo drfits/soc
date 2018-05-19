@@ -6,10 +6,9 @@
 <title data-sly-text="${properties.jcr:title || properties.title || resource.name}"></title>
 
 <!-- Bootstrap core CSS -->
-<link rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous">
-
+<sly data-sly-use.clientlib="/libs/soc/sightly/templates/clientlib.html">
+    <!-- Bootstrap Core CSS -->
+    <sly data-sly-call="${clientlib.all @ categories='demo-content-blog-base'}"/>
+</sly>
 
 <sly data-sly-include="head-custom.html"></sly>

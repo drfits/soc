@@ -21,5 +21,4 @@
     <!-- Indexes -->
     <filter root="/oak:index/socPageContent"/>
     <filter root="/oak:index/socTemplate"/>
-    <filter root="/oak:index/socClientLibraryFolder"/>
 </workspaceFilter>
