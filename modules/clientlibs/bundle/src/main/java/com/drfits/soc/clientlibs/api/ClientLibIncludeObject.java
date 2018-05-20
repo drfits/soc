@@ -28,7 +28,7 @@ public final class ClientLibIncludeObject implements Use {
 
     private ResourceResolver resourceResolver;
 
-    ClientLibIncludeObject() {
+    public ClientLibIncludeObject() {
         LOG.debug("Instantiate ClientLibIncludeObject");
     }
 
