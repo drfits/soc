@@ -351,6 +351,7 @@
                         <password>${sling.password}</password>
                         <useProxy>false</useProxy>
                         <failOnMissingEmbed>true</failOnMissingEmbed>
+                        <allowIndexDefinitions>true</allowIndexDefinitions>
                     </configuration>
                 </plugin>
                 <!-- Skip license check only for development -->
