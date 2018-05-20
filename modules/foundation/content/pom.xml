@@ -81,7 +81,7 @@
                     <properties>
                         <!-- More info: http://jackrabbit.apache.org/filevault-package-maven-plugin-archives/1.0.2-SNAPSHOT/package-mojo.html-->
                         <acHandling>merge_preserve</acHandling>
-                        <allowIndexDefinitions>true</allowIndexDefinitions>
+                        <!--<allowIndexDefinitions>true</allowIndexDefinitions>-->
                     </properties>
                     <embeddeds>
                         <embedded>
