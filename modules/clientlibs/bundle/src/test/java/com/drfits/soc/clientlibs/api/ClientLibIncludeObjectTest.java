@@ -1,7 +1,6 @@
 package com.drfits.soc.clientlibs.api;
 
 import com.drfits.soc.clientlibs.impl.ClientLibraryStoreImpl;
-import com.drfits.soc.clientlibs.impl.ClientLibraryType;
 import com.drfits.soc.clientlibs.model.ClientLibraryModel;
 import com.drfits.soc.test.core.SOCContext;
 import com.google.common.collect.ImmutableList;

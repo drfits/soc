@@ -1,6 +1,5 @@
 package com.drfits.soc.clientlibs.api;
 
-import com.drfits.soc.clientlibs.impl.ClientLibraryType;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.ResourceResolver;
@@ -16,7 +15,7 @@ import javax.script.Bindings;
 /**
  * Created by Evgeniy Fitsner <drfits@drfits.com> on 10/20/16.
  */
-public class ClientLibIncludeObject implements Use {
+public final class ClientLibIncludeObject implements Use {
 
     private static final Logger LOG = LoggerFactory.getLogger(ClientLibIncludeObject.class);
 
@@ -29,7 +28,7 @@ public class ClientLibIncludeObject implements Use {
 
     private ResourceResolver resourceResolver;
 
-    public ClientLibIncludeObject() {
+    ClientLibIncludeObject() {
         LOG.debug("Instantiate ClientLibIncludeObject");
     }
 

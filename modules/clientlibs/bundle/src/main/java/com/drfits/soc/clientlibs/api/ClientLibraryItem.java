@@ -1,7 +1,5 @@
 package com.drfits.soc.clientlibs.api;
 
-import com.drfits.soc.clientlibs.impl.ClientLibraryType;
-
 import java.io.Serializable;
 
 /**

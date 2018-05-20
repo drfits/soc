@@ -1,7 +1,7 @@
 package com.drfits.soc.clientlibs.model;
 
 import com.drfits.soc.clientlibs.api.ClientLibraryItem;
-import com.drfits.soc.clientlibs.impl.ClientLibraryType;
+import com.drfits.soc.clientlibs.api.ClientLibraryType;
 import org.apache.commons.lang3.EnumUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
