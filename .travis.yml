@@ -5,8 +5,9 @@ branches:
   only:
     - master
     - develop
+install: true
 script:
-  - "mvn clean install cobertura:cobertura coveralls:report -DrepoToken=$COVERALLS_TOKEN"
+  - "mvn clean package cobertura:cobertura coveralls:report -DrepoToken=$COVERALLS_TOKEN -P soc-modules-development,installPackage"
 cache:
   directories:
   - "$HOME/.m2"

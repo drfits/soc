@@ -1,9 +1,0 @@
-{
-  "jcr:primaryType": "oak:QueryIndexDefinition",
-  "jcr:name:propertyNames": [
-    "soc:Template"
-  ],
-  "reindex": true,
-  "reindexCount": 0,
-  "type": "property"
-}

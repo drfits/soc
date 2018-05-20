@@ -19,7 +19,9 @@
 
     <modules>
         <module>common</module>
+        <module>clientlibs</module>
         <module>foundation</module>
+        <module>editorial-ui</module>
     </modules>
 
 </project>

@@ -1,0 +1,8 @@
+<div class="container">
+    <sly data-sly-test="${!properties['copyright']}">
+        <p class="m-0 text-center text-white">${'Copyright' @i18n} &copy; Sling Open CMS</p>
+    </sly>
+    <sly data-sly-test="${properties['copyright']}">
+        <p class="m-0 text-center text-white">${properties['copyright'] @i18n, context='html'}</p>
+    </sly>
+</div>

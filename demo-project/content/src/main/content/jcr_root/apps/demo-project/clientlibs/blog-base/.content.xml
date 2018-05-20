@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          jcr:primaryType="soc:ClientLibraryFolder"
+          categories="demo-content-blog-base">
+    <items jcr:primaryType="nt:unstructured">
+        <css3 jcr:primaryType="nt:unstructured"
+              type="css"
+              src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+              external="true"
+              integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+              crossOrigin="anonymous"/>
+    </items>
+</jcr:root>

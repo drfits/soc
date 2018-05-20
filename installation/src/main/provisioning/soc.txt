@@ -1,3 +1,22 @@
+#
+#  Licensed to the Apache Software Foundation (ASF) under one
+#  or more contributor license agreements.  See the NOTICE file
+#  distributed with this work for additional information
+#  regarding copyright ownership.  The ASF licenses this file
+#  to you under the Apache License, Version 2.0 (the
+#  "License"); you may not use this file except in compliance
+#  with the License.  You may obtain a copy of the License at
+#
+#   http://www.apache.org/licenses/LICENSE-2.0
+#
+#  Unless required by applicable law or agreed to in writing,
+#  software distributed under the License is distributed on an
+#  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+#  KIND, either express or implied.  See the License for the
+#  specific language governing permissions and limitations
+#  under the License.
+#
+#
 [feature name=soc]
 [variables]
     soc.version=1.0.0-SNAPSHOT
@@ -14,11 +33,12 @@
     # Added for SOC
     create path (sling:OrderedFolder) /published
     # path for client-lib files
-    create path (sling:OrderedFolder) /etc/clientlibs
+#    create path (sling:OrderedFolder) /etc/clientlibs
 
     # Added for SOC
     set ACL for anonymous
-        allow   jcr:read	on /published,/etc/clientlibs
+        allow   jcr:read	on /published
+#        allow   jcr:read	on /published,/etc/clientlibs
     end
 
     set ACL on /libs,/apps
@@ -29,21 +49,19 @@
         allow jcr:read for soc-pages-service-user,soc-clientlibs-service-user
     end
 
-    set ACL on /etc/clientlibs
-        allow jcr:read for soc-clientlibs-service-user
-    end
+#    set ACL on /etc/clientlibs
+#        allow jcr:read for soc-clientlibs-service-user
+#    end
 
-[artifacts startLevel=20]
-    com.drfits.soc.modules.foundation/core/1.0.0-SNAPSHOT
-    com.drfits.soc.modules.foundation/content/1.0.0-SNAPSHOT
+#[artifacts startLevel=20]
+#    com.drfits.soc.modules.foundation/core/1.0.0-SNAPSHOT
+#    com.drfits.soc.modules.foundation/content/1.0.0-SNAPSHOT
 
-[configurations]
-  org.apache.sling.commons.log.LogManager.factory.config-soc.log
-      org.apache.sling.commons.log.pattern="%msg%n"
-      org.apache.sling.commons.log.names=["com.drfits.soc.modules.foundation"]
-      org.apache.sling.commons.log.file="logs/modules/foundation.log"
-      org.apache.sling.commons.log.level="info"
-      org.apache.sling.commons.log.file.size="'.'yyyy-MM-dd"
-      org.apache.sling.commons.log.file.number=I"7"
-
-
+#[configurations]
+#  org.apache.sling.commons.log.LogManager.factory.config-soc.log
+#      org.apache.sling.commons.log.pattern="%msg%n"
+#      org.apache.sling.commons.log.names=["com.drfits.soc.modules.foundation"]
+#      org.apache.sling.commons.log.file="logs/modules/foundation.log"
+#      org.apache.sling.commons.log.level="info"
+#      org.apache.sling.commons.log.file.size="'.'yyyy-MM-dd"
+#      org.apache.sling.commons.log.file.number=I"7"

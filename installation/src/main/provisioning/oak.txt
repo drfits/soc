@@ -20,7 +20,7 @@
 [feature name=oak]
 
 [variables]
-    oak.version=1.6.7
+    oak.version=1.6.8
 
 # The segment node store is used via a configuration
 [artifacts startLevel=10]
@@ -38,7 +38,7 @@
 
 [artifacts startLevel=15 runModes=oak_mongo]
     org.mongodb/mongo-java-driver/3.4.1
-    com.h2database/h2-mvstore/1.4.194
+    com.h2database/h2-mvstore/1.4.196
 
 # start the Oak server instance after all components have been configured
 # and started to avoid restarting that component ( see SLING-4556 )
@@ -81,9 +81,14 @@
     userPrivilegeNames=["jcr:all"]
     groupPrivilegeNames=["jcr:read"]
 
+# [SOC]: Separate nodes store
 [configurations runModes=oak_tar]
   org.apache.jackrabbit.oak.segment.SegmentNodeStoreService
-    name="Default\ NodeStore"
+    name="Separated\ NodeStore"
+    customBlobStore=B"true"
+
+  org.apache.jackrabbit.oak.plugins.blob.datastore.FileDataStore
+    path="sling/repository/datastore"
 
 [configurations runModes=oak_mongo]
   org.apache.jackrabbit.oak.plugins.document.DocumentNodeStoreService

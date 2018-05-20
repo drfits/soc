@@ -1,9 +1,0 @@
-{
-  "jcr:primaryType": "sling:OsgiConfig",
-  "sling.auth.requirements": [
-    "-/bin",
-    "-/etc/clientlibs",
-    "/etc/clientlibs/admin",
-    "/admin"
-  ]
-}

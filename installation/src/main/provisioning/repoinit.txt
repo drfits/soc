@@ -26,7 +26,7 @@
 [:repoinit]
     # general
     create path (sling:OrderedFolder) /content
-    # Removed for SOC
+    # [SOC]: removed
     #set ACL for everyone
     #    allow   jcr:read	on /
     #end
