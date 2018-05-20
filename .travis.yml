@@ -1,15 +1,13 @@
 language: java
 jdk: oraclejdk8
 sudo: false # faster builds
-env:
-  matrix:
-    - SOC_BUILD_PROFILE=soc-modules
+branches:
+  only:
+    - master
+    - develop
+install: true
 script:
-  - "mvn clean install -P ${SOC_BUILD_PROFILE}"
-  - "mvn test -P ${SOC_BUILD_PROFILE}"
-  - "mvn cobertura:cobertura -P ${SOC_BUILD_PROFILE}"
+  - "mvn clean package cobertura:cobertura coveralls:report -DrepoToken=$COVERALLS_TOKEN -P soc-modules-development,installPackage"
 cache:
   directories:
   - "$HOME/.m2"
-after_success:
-  - bash <(curl -s https://codecov.io/bash)

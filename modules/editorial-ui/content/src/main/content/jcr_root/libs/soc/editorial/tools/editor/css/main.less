@@ -1,0 +1,54 @@
+@import "constants.less";
+
+body {
+
+    /* iframe where we are rendering original page */
+    .soc-page-mirror {
+        position: absolute;
+        border: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: @zindex-mirror;
+        overflow: hidden;
+    }
+
+    /* Place where we can see shadows of the components */
+    .soc-shadows-panel {
+        z-index: @zindex-shadows-panel;
+        display: none;
+        position: absolute;
+        left: 0;
+
+        /* Visual styles for shadows */
+        .shadow-component {
+            position: inherit;
+            &:hover {
+                outline: .2rem dashed #175fff;
+            }
+            &.selected {
+                z-index: @zindex-selected-shadow;
+                outline: .25rem solid #175fff;
+            }
+        }
+
+        .shadow-component-area {
+            .shadow-component;
+            &:hover {
+                outline-color: #2EB01A;
+            }
+            &.selected {
+                outline-color: #2EB01A;
+            }
+        }
+
+        .soc-component-toolbar {
+            z-index: @zindex-toolbar;
+            & > button {
+                z-index: @zindex-toolbar;
+                min-width: 3rem;
+                height: 2.2rem;
+            }
+        }
+    }
+}

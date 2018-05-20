@@ -1,0 +1,14 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title data-sly-text="${properties.jcr:title || properties.title || resource.name}"></title>
+
+<!-- Bootstrap core CSS -->
+<sly data-sly-use.clientlib="/libs/soc/sightly/templates/clientlib.html">
+    <!-- Bootstrap Core CSS -->
+    <sly data-sly-call="${clientlib.all @ categories='demo-content-blog-base'}"/>
+</sly>
+
+<sly data-sly-include="head-custom.html"></sly>

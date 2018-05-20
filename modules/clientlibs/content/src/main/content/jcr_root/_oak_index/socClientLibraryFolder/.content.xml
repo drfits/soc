@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root
+        xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+        xmlns:jcr="http://www.jcp.org/jcr/1.0"
+        xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+        xmlns:soc="http://www.drfits.com/soc/1.0"
+        jcr:primaryType="oak:Unstructured"
+        async="async"
+        compatVersion="{Long}2"
+        evaluatePathRestrictions="{Boolean}true"
+        type="lucene">
+    <indexRules jcr:primaryType="nt:unstructured">
+        <soc:ClientLibraryFolder jcr:primaryType="nt:unstructured">
+            <properties jcr:primaryType="nt:unstructured">
+                <categories jcr:primaryType="nt:unstructured"
+                              name="categories"
+                              propertyIndex="{Boolean}true"/>
+            </properties>
+        </soc:ClientLibraryFolder>
+    </indexRules>
+</jcr:root>

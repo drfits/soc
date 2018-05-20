@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          jcr:primaryType="soc:ClientLibraryFolder"
+          categories="demo-content-blog-home">
+    <items jcr:primaryType="nt:unstructured">
+        <css1 jcr:primaryType="nt:unstructured"
+              type="css"
+              src="css/blog-home.css"/>
+    </items>
+</jcr:root>
