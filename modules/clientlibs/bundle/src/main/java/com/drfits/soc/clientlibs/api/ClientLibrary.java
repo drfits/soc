@@ -28,4 +28,11 @@ public interface ClientLibrary extends Serializable {
      * @return list of entries.
      */
     List<ClientLibraryItem> getItems();
+
+    /**
+     * If resource have to be retrieved over the proxy servlet from: /etc.clientlibs/...
+     *
+     * @return true if over servlet, false if by absolute path.
+     */
+    boolean allowProxy();
 }

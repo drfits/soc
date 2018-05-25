@@ -30,6 +30,9 @@ public final class ClientLibraryModel implements ClientLibrary {
     private final String path;
 
     @Inject
+    private boolean allowProxy;
+
+    @Inject
     private final List<String> categories = Collections.emptyList();
 
     @Inject
@@ -59,6 +62,11 @@ public final class ClientLibraryModel implements ClientLibrary {
     @Override
     public List<ClientLibraryItem> getItems() {
         return this.items;
+    }
+
+    @Override
+    public boolean allowProxy() {
+        return this.allowProxy;
     }
 
     @Override
