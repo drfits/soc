@@ -1,5 +1,6 @@
 package com.drfits.soc.clientlibs.api;
 
+import com.drfits.soc.clientlibs.servlet.ClientSideLibraryProxy;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.ResourceResolver;
@@ -24,8 +25,8 @@ public final class ClientLibIncludeObject implements Use {
 
     private String[] categories;
     private String mode;
-    private ClientLibraryStore clientLibraryStore;
 
+    private ClientLibraryStore clientLibraryStore;
     private ResourceResolver resourceResolver;
 
     public ClientLibIncludeObject() {
@@ -91,12 +92,12 @@ public final class ClientLibIncludeObject implements Use {
             switch (item.getType()) {
                 case CSS:
                     if (type == ClientLibraryType.CSS || type == ClientLibraryType.ALL) {
-                        out.append(getCssMarkup(item, library.getPath()));
+                        out.append(getCssMarkup(item, library.getPath(), library.allowProxy()));
                     }
                     break;
                 case JS:
                     if (type == ClientLibraryType.JS || type == ClientLibraryType.ALL) {
-                        out.append(getJsMarkup(item, library.getPath()));
+                        out.append(getJsMarkup(item, library.getPath(), library.allowProxy()));
                     }
                     break;
                 default:
@@ -106,12 +107,12 @@ public final class ClientLibIncludeObject implements Use {
         return out.toString();
     }
 
-    private static StringBuilder getCssMarkup(final ClientLibraryItem item, final String libraryPath) {
+    private static StringBuilder getCssMarkup(final ClientLibraryItem item, final String libraryPath, final boolean allowProxy) {
         final StringBuilder out = new StringBuilder("<link rel=\"stylesheet\" href=\"");
         if (item.isExternal()) {
             out.append(item.getSrc());
         } else {
-            out.append(libraryPath).append('/').append(item.getSrc());
+            out.append(rewriteIfAllowedProxy(libraryPath, allowProxy)).append('/').append(item.getSrc());
         }
         out.append("\"");
         if (StringUtils.isNoneBlank(item.getIntegrity())) {
@@ -125,12 +126,12 @@ public final class ClientLibIncludeObject implements Use {
         return out;
     }
 
-    private static StringBuilder getJsMarkup(final ClientLibraryItem item, final String libraryPath) {
+    private static StringBuilder getJsMarkup(final ClientLibraryItem item, final String libraryPath, final boolean allowProxy) {
         final StringBuilder out = new StringBuilder("<script src=\"");
         if (item.isExternal()) {
             out.append(item.getSrc());
         } else {
-            out.append(libraryPath).append('/').append(item.getSrc());
+            out.append(rewriteIfAllowedProxy(libraryPath, allowProxy)).append('/').append(item.getSrc());
         }
         out.append("\"");
         if (StringUtils.isNoneBlank(item.getIntegrity())) {
@@ -142,5 +143,13 @@ public final class ClientLibIncludeObject implements Use {
         }
         out.append("></script>");
         return out;
+    }
+
+    private static String rewriteIfAllowedProxy(final String path, final boolean proxy) {
+        if (proxy && StringUtils.startsWith(path, ClientSideLibraryProxy.PROXY_TARGET_PATH)) {
+            return ClientSideLibraryProxy.PROXY_URL_PATH + path.substring(ClientSideLibraryProxy.PROXY_TARGET_PATH.length());
+        } else {
+            return path;
+        }
     }
 }
