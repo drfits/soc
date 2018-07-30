@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
           jcr:primaryType="sling:OsgiConfig"
-          user.mapping="[foundation-core:soc-templates-service-user=soc-templates-service-user,foundation-core:soc-pages-service-user=soc-pages-service-user]"/>
+          user.mapping="[com.drfits.soc.modules.foundation.bundle:component-manager=soc-components-service-user,
+          ,com.drfits.soc.modules.foundation.bundle:template-manager=soc-templates-service-user,
+          ,com.drfits.soc.modules.foundation.bundle:page-manager=soc-pages-service-user]"
+/>

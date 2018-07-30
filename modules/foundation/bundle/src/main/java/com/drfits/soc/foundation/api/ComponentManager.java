@@ -7,8 +7,11 @@ import java.util.List;
  * Created by Evgeniy Fitsner <drfits@drfits.com> on 06/09/17.
  */
 public interface ComponentManager {
+
+    String SUBSERVICE_NAME = "component-manager";
+
     /**
-     * List of available components to apply under specified path
+     * List of available components which can be inserted into specified path
      *
      * @param path for which components will be searched
      * @return list of available components

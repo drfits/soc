@@ -6,7 +6,9 @@ import com.drfits.soc.foundation.exceptions.SOCException;
 import com.drfits.soc.foundation.models.PageModel;
 import org.apache.jackrabbit.JcrConstants;
 import org.apache.sling.api.resource.*;
+import org.apache.sling.serviceusermapping.ServiceUserMapped;
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,7 +20,16 @@ import javax.jcr.Workspace;
  * Implementation of page management
  * Created by Evgeniy Fitsner <drfits@drfits.com> on 12/18/16.
  */
-@Component(service = PageManager.class, immediate = true)
+@Component(
+        service = PageManager.class,
+        immediate = true,
+        reference = {
+                @Reference(
+                        name = PageManager.SUBSERVICE_NAME,
+                        target = "(subServiceName=" + PageManager.SUBSERVICE_NAME + ")",
+                        service = ServiceUserMapped.class
+                )
+        })
 public class PageManagerImpl implements PageManager {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(PageManagerImpl.class);

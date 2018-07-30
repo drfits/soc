@@ -3,7 +3,6 @@ package com.drfits.soc.foundation.templates;
 import com.drfits.soc.foundation.api.Template;
 import com.drfits.soc.foundation.api.TemplateManager;
 import com.drfits.soc.foundation.templates.models.TemplateModel;
-import com.drfits.soc.foundation.util.GlobalConstants;
 import com.google.common.collect.ImmutableMap;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
@@ -29,8 +28,8 @@ import java.util.regex.PatternSyntaxException;
         },
         reference = {
                 @Reference(
-                        name = GlobalConstants.SERVICE_USER_TEMPLATES,
-                        target = "(subServiceName=" + GlobalConstants.SERVICE_USER_TEMPLATES + ")",
+                        name = TemplateManager.SUBSERVICE_NAME,
+                        target = "(subServiceName=" + TemplateManager.SUBSERVICE_NAME + ")",
                         service = ServiceUserMapped.class
                 )
         }
@@ -44,7 +43,7 @@ public class TemplateManagerImpl implements TemplateManager {
 
     private static final Map<String, Object> SERVICE_USER = ImmutableMap.of(
             ResourceResolverFactory.SUBSERVICE,
-            GlobalConstants.SERVICE_USER_TEMPLATES
+            TemplateManager.SUBSERVICE_NAME
     );
 
     private static final String Q_ALL_TEMPLATES = "SELECT t.* FROM [soc:Template] as t";

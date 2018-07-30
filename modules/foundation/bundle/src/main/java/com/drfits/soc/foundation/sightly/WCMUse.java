@@ -1,6 +1,5 @@
 package com.drfits.soc.foundation.sightly;
 
-import com.drfits.soc.foundation.util.GlobalConstants;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.jackrabbit.api.JackrabbitSession;
 import org.apache.jackrabbit.api.security.user.Group;
@@ -32,6 +31,8 @@ import java.net.URISyntaxException;
  */
 @Deprecated
 public class WCMUse implements Use {
+
+    private static final String GROUP_ID_AUTHORS = "authors";
 
     /**
      * Logger instance to log and debug errors.
@@ -137,7 +138,7 @@ public class WCMUse implements Use {
 
         try {
             UserManager userManager = js.getUserManager();
-            Group authors = (Group) userManager.getAuthorizable(GlobalConstants.GROUP_ID_AUTHORS);
+            Group authors = (Group) userManager.getAuthorizable(GROUP_ID_AUTHORS);
             User user = (User) js.getUserManager().getAuthorizable(js.getUserID());
 
             authorable = user.isAdmin() || authors.isMember(user);

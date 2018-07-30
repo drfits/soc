@@ -8,6 +8,9 @@ import org.apache.sling.api.resource.Resource;
  * Created by Evgeniy Fitsner <drfits@drfits.com> on 11/14/16.
  */
 public interface PageManager {
+
+    String SUBSERVICE_NAME = "page-manager";
+
     /**
      * Create page from specified template
      *

@@ -27,8 +27,8 @@ import java.util.regex.PatternSyntaxException;
         },
         reference = {
                 @Reference(
-                        name = GlobalConstants.SERVICE_USER_TEMPLATES,
-                        target = "(subServiceName=" + GlobalConstants.SERVICE_USER_TEMPLATES + ")",
+                        name = ComponentManager.SUBSERVICE_NAME,
+                        target = "(subServiceName=" + ComponentManager.SUBSERVICE_NAME + ")",
                         service = ServiceUserMapped.class
                 )
         }
@@ -42,7 +42,7 @@ public class ComponentManagerImpl implements ComponentManager {
 
     private static final Map<String, Object> SERVICE_USER = ImmutableMap.of(
             ResourceResolverFactory.SUBSERVICE,
-            GlobalConstants.SERVICE_USER_TEMPLATES
+            ComponentManager.SUBSERVICE_NAME
     );
 
     private static final String Q_ALL_COMPONENTS = "SELECT c.* FROM [soc:Component] as c";

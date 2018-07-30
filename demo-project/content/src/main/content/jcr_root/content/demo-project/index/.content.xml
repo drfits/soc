@@ -17,5 +17,10 @@
         <copyright jcr:primaryType="nt:unstructured"
                    sling:resourceType="demo-project/components/copyright"
                    copyright="Copyright &amp;copy; Sling Open CMS"/>
+        <widgets jcr:primaryType="nt:unstructured"
+                   sling:resourceType="soc/foundation/area">
+            <categories jcr:primaryType="nt:unstructured"
+                       sling:resourceType="demo-project/components/widgets/categories"/>
+        </widgets>
     </jcr:content>
 </jcr:root>

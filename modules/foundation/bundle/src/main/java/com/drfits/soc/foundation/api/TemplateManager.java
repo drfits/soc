@@ -7,6 +7,9 @@ import java.util.List;
  * Created by Evgeniy Fitsner <drfits@drfits.com> on 12/18/16.
  */
 public interface TemplateManager {
+
+    String SUBSERVICE_NAME = "template-manager";
+
     /**
      * List of available templates to apply under specified path
      *
